@@ -1,0 +1,230 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{maquereaux}
+
+% ===============================
+% Dependancies
+% ===============================
+
+\RequirePackage[french]{babel}
+
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+
+% ===============================
+% Macros
+% ===============================
+
+% Typographie
+
+\newcommand\nom[2]{#1 \textsc{#2}}                      % nom
+\newcommand\ofg[1]{\og #1\fg}                           % texte guillemets à la française
+\newcommand\inc[1]{---~#1~---}                          % incise
+
+% Symboles mathématiques
+
+% logique et typographie générale :
+% commande en minuscule -> constante ou fonction
+% commande en majuscule -> ensemble
+% mettre, si possible, une commande en anglais plutôt qu’en français
+% pour être raccord avec les commandes LaTeX usuelles qui sont écrites en anglais
+
+% GÉNÉRIQUE
+
+% constantes et symboles
+\renewcommand\d{\,\mathrm{d}}                              % différentielle
+\DeclareMathOperator{\e}{e} % nombre e
+\renewcommand\i{\mathrm{i}}
+\newcommand\gold{\varphi} % nombre d’or
+
+\newcommand\kro[2]{\delta_{#1,#2}} % symbole de Kronecker
+\newcommand\inv[1]{#1^{-1}} % inverse
+
+\newcommand\longto{\longrightarrow} % longue flèche
+
+\newcommand{\function}[5]{ % fonction
+  \begin{array}{rcl}
+    #1 : #2 & \longto & #3 \\
+    #4 & \longmapsto     & #5
+  \end{array}
+}
+
+\DeclareMathOperator{\nor}{\triangle} % différence symétrique
+
+% écriture d’ensembles
+
+\newcommand\sa{\,|\,} % such as = tel que
+
+% TODO: traduire ces commandes en anglais proprement
+\newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
+\newcommand\EnsA[2]{\left\{#1~;~#2\right\}} % ensemble décrit analytiquement
+
+% fonctions usuelles (autres opérateurs)
+\DeclareMathOperator\ch{ch} % cosinus hyperbolique
+\DeclareMathOperator\sh{sh} % sinus hyperbolique
+
+% ensembles de nombres
+\newcommand\ens[1]{\mathbb{#1}}                         % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
+% \newcommand\ens[1]{\mathbf{#1}}
+
+\newcommand\N{\ens{N}}                                  % l'ensemble des naturels
+\newcommand\Z{\ens{Z}}                                  % l'ensemble des relatifs
+\newcommand\Q{\ens{Q}}                                  % l'ensemble des rationnels
+\newcommand\R{\ens{R}}                                  % l'ensemble des reels
+\newcommand\C{\ens{C}}                                  % l'ensemble des complexes
+\renewcommand\H{\ens{H}}                                  % l'ensemble des quaternions
+
+\newcommand\K{\ens{K}}                                  % corps usuel, R ou C.
+\newcommand\F{\ens{F}}                                  % corps à p éléments
+
+\newcommand\card[1]{\mathrm{Card}\left\{#1\right\}}                    % Cardinal (notations usuelles : #, Card, |·|)
+% \newcommand\card[1]{\left\{#1\right\}}
+% \newcommand\card[1]{|#1|}
+\newcommand\parts[1]{\mathcal{P}\left(#1\right)}      % parties de E
+
+\newcommand\comp[1]{\overline{#1}}                    % complémentaire d'un ensemble
+
+% ALGÈBRE
+
+% Algèbre générale
+
+% ensembles génériques
+\newcommand\ensS[1]{\mathfrak{#1}}                      % notation des ensembles de permutations : classiques ou mathfrak
+\newcommand\Sym{\ensS{S}}                               % groupe symétrique (permutations)
+\newcommand\Alt{\ensS{A}}                               % groupe alterné
+
+% relations
+\newcommand\rel{\mathcal{R}}                            % Relation binaire
+\DeclareMathOperator{\iso}{\cong}                      % relation d'isomorphisme (groupes, anneaux, etc.)
+\DeclareMathOperator{\subgroup}{<} % sous-groupe
+\DeclareMathOperator{\disting}{\triangleleft} % sous-groupe distingué
+
+\newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
+
+% ensembles de morphismes
+\newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
+\newcommand\Iso{\mathrm{Iso}}                             % l'ensemble des isomorphismes de groupes
+% \newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
+\newcommand\Aut{\mathrm{Aut}}                             % l'ensemble des automorphismes de groupe
+
+\DeclareMathOperator{\sign}{\varepsilon}                  % Signature d'une permutation
+
+\DeclareMathOperator{\Id}{Id} % application identité
+
+% Algèbre linéaire
+
+\DeclareMathOperator{\Vect}{Vect} % ensemble engendré par une famille de vecteurs
+
+\newcommand\Lin[2]{\mathcal{L}(#1, #2)}                 % ensemble des applications linéaires
+\newcommand\Linc[2]{\mathcal{L}_c(#1, #2)}              % ensemble des applications linéaires continues
+\newcommand\FLin[1]{\Lin{#1}{\R}} % ensemble des formes linéaires
+\newcommand\dual[1]{#1^*} % espace dual
+
+\newcommand\End[1]{\mathcal{L}(#1)}              % ensemble des endomorphismes
+
+\newcommand\Bil[2]{\mathcal{L}_2(#1, #2)}               % ensemble des formes bilinéaires
+\newcommand\Quad[1]{\mathcal{Q}(#1)}                    % ensemble des formes quadratiques
+
+\newcommand\M{\mathcal{M}}                            % l'ensemble des matrices
+
+\newcommand\GL{\mathrm{GL}}                             % groupe linéaire (matrices inversibles)
+\newcommand\SL{\mathrm{SL}}                             % groupe spécial linéaire (matrices de déterminant 1)
+\newcommand\Orth{\mathcal{O}}                           % groupe orthogonal (matrices dont l'inverse est la transposée)
+\newcommand\SO{\mathrm{SO}}                             % groupe spécial orthogonal (matrices orthogonales de déterminant 1)
+
+\renewcommand\S{\mathcal{S}}                            % ensemble des matrices symétriques
+\newcommand\Diag{\mathrm{D}}                            % ensemble des matrices diagonales
+
+\newcommand\vect[1]{\mathbf{#1}}                        % écriture d'un vecteur
+\DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
+
+\renewcommand\t[1]{#1^\top}                             % Transposée (version T après)
+% \renewcommand\t[1]{{}^t #1}                             % Transposée (version t avant)
+
+\DeclareMathOperator{\tr}{Tr}                  % Trace
+\renewcommand\ker{\mathrm{Ker}}                         % Noyau
+\DeclareMathOperator{\im}{Im}                  % Image
+\DeclareMathOperator{\rg}{rg}                  % Rang
+
+\DeclareMathOperator{\codim}{codim}            % Codimension
+\DeclareMathOperator{\com}{com} % Comatrice
+
+\DeclareMathOperator\Sp{Sp}                      % Spectre
+
+% ────────────────────────────────────────────────────────────────────────────────
+% (ANALYSE)
+% ────────────────────────────────────────────────────────────────────────────────
+
+\newcommand\abs[1]{\left| #1\right|} % Valeur absolue
+\newcommand\norme[1]{\left\Vert #1\right\Vert}          % Norme
+\newcommand\triple[1]{\left|\left|\left|#1\right|\right|\right|} % norme triple
+\newcommand\ps[2]{\left\langle #1 ~|~ #2\right\rangle}  % Produit scalaire
+
+% ────────────────────────────────────────────────────────────────────────────────
+% (Différentiation)
+
+\newcommand\diff[2]{\d #1_{#2}} % Différentielle (notation df_a)
+% \newcommand\diff[2]{\d #1(#2)} % Différentielle (notation df(a))
+% \newcommand\diff[2]{#1'(#2)} % Différentielle (notation f'(a))
+
+\newcommand\deriv[2]{\frac{\d #1}{\d #2}}               % Derivee
+% \newcommand\dpar[2]{\frac{\partial #1}{\partial #2}}    % Derivee partielle
+\newcommand\dpar[2]{\partial_{#2} #1}    % Derivee partielle
+\newcommand\dnpar[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}   % nième derivee partielle
+
+\DeclareMathOperator{\grad}{\nabla}                     % Gradient
+\DeclareMathOperator{\lap}{\Delta}                      % Laplacien
+
+\DeclareMathOperator{\Jac}{Jac} % matrice jacobienne
+\newcommand\detjac[2]{\mathrm{J}_{#1}\left(#2\right)} % déterminant jacobien
+\renewcommand{\div}{\mathrm{div}} % divergence
+\newcommand\hess[1]{\mathcal{H}#1} % hessienne
+
+% Topologie
+\newcommand\Boule[2]{B\left(#1,#2\right)}               % Boule (ouverte) en a de rayon r
+\newcommand\Boulef[2]{\bar{B}\left(#1,#2\right)}        % Boule fermée en a de rayon r
+
+\newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
+\newcommand\adh[1]{\overline{#1}}                            % adhérence
+\newcommand\front[1]{\mathrm{Fr}(#1)}                   % frontière
+
+\newcommand\Bornee[2]{B\left(#1, #2\right)}             % Ensemble des application bornées de X dans E
+\newcommand\SBorn[1]{l^{\infty}\left(#1\right)}         % Ensemble des suites bornées dans E
+\newcommand\SConv[1]{\mathcal{C}\left(#1\right)}        % Ensemble des suites convergentes dans E
+\newcommand\SConvz[1]{\mathcal{C}_0\left(#1\right)}     % Ensemble des suites convergeant vers 0 dans E.
+
+% PROBABILITÉS
+
+% opérateurs usuelles
+\newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
+% \newcommand\Prob[1]{\mathrm{P}\left(#1\right)}                 % Probabilité (variante, P simple droit)
+\newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
+\newcommand\Var[1]{\mathrm{Var}\left(#1\right)}                  % Variance
+\newcommand\sd[1]{\sigma\left(#1\right)}                  % Écart-type (standard deviation)
+% TODO: décider si macro sous la forme \Cov{}{}
+\DeclareMathOperator{\Cov}{Cov}                  % Covariance
+
+% lois discrètes
+\newcommand\Bernoulli[1]{\mathcal{B}(#1)}                 % Loi de Bernoulli
+\newcommand\Binom[2]{\Bernoulli{#1,#2}}                   % Loi binomiale
+\newcommand\Poisson[1]{\mathcal{P}(#1)}                   % Loi de Poisson
+\newcommand\Geom[1]{\mathcal{G}(#1)}                      % Loi géométrique
+\newcommand\Hyper[3]{\mathcal{H}(#1,#2,#3)}               % Loi hypergéométrique
+
+% lois continues
+\newcommand\Exp[1]{\mathcal{E}(#1)}                       % Loi exponentielle
+\newcommand\Normale[2]{\mathcal{N}\left(#1, #2\right)}    % Loi normale
+\newcommand\chid[1]{\chi_{#1}^2}                          % Loi du chi-deux
+
+\DeclareMathOperator{\GEV}{\mathrm{GEV}}                  % Loi GEV (Generalized Extreme Values)
+\DeclareMathOperator{\GPD}{\mathrm{GP}}                   % Loi GPD (Generalized Pareto Distribution)
+
+% ARITHMÉTIQUE
+
+\newcommand\Zmod[1]{\Z/#1\Z}                             % classes d'équivalence modulo n
+\newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
+
+\newcommand\divides{\,|\,} % divisibilité
+\newcommand\congr[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
+\newcommand\pgcd[2]{#1\vee #2}
+\newcommand\ppcm[2]{#1\wedge #2}

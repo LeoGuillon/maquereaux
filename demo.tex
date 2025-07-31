@@ -15,6 +15,8 @@
 \usepackage{unicode-math}
 \setmathfont{IBM Plex Math}
 
+\usepackage[margin=0.5in]{geometry}
+
 % ────────────────────────────────────────────────────────────────────────────────
 % (METADATA)
 
@@ -26,30 +28,50 @@
 
 \maketitle
 
+\section{Logique de conception des commandes}
+
+De manière générale, on essaie de suivre les conventions mathématiques : une commande pour un ensemble est en majuscule, tandis qu’une fonction ou un opérateur sera en minuscule.
+
+Par ailleurs, pour être le plus consistant possible avec les autres commandes déjà existantes en LaTeX, les commandes doivent être nommées en anglais.
+
+\section{Listes des commandes}
+\centering
 \begin{tabular}{lcl}
   \toprule
   Commande & Affichage & Signification\\
   \midrule
-  \multicolumn{3}{c}{\strong{Généralités}}\\
-  \midrule
+  \multicolumn{3}{l}{\strong{Généralités}}\\
+  \multicolumn{3}{l}{\emph{Constantes mathématiques}}\\
   \texttt{e} & $\e$ & constante exponentielle\\
   \texttt{i} & $\i$ & nombre $\i$\\
   \texttt{gold} & $\gold$ & nombre d’or\\
   \texttt{kro\{i\}\{j\}} & $\kro{i}{j}$ & symbole de Kronecker\\
-  \multicolumn{3}{c}{\emph{Ensembles}}\\
+  \texttt{longto} & $\longto$ & longue flèche \\
+  \texttt{function\{f\}\{A\}\{B\}\{x\}\{f(x)\}} & $\function{f}{A}{B}{x}{f(x)}$ & définition de fonction \\
+  \multicolumn{3}{l}{\emph{Ensembles}}\\
+  \texttt{N} & $\N$ & ensemble des entiers naturels\\
+  \texttt{Z} & $\Z$ & ensemble des entiers relatifs\\
+  \texttt{Q} & $\Q$ & ensemble des nombres rationnels\\
+  \texttt{R} & $\R$ & ensemble des nombres réels\\
+  \texttt{C} & $\C$ & ensemble des nombres complexes\\
+  \texttt{H} & $\H$ & ensemble des quaternions\\
+  \texttt{card\{E\}} & $\card{E}$ & cardinal de l’ensemble $E$\\
+  \texttt{parts\{E\}} & $\parts{E}$ & ensemble des parties de l’ensemble $E$\\
+  \texttt{comp\{E\}} & $\comp{E}$ & complémentaire de l’ensemble $E$\\
   \midrule
-  \multicolumn{3}{c}{\strong{Algèbre}}\\
-  \multicolumn{3}{c}{\emph{Algèbre générale}}\\
-  \multicolumn{3}{c}{\emph{Algèbre linéaire}}\\
+  \multicolumn{3}{l}{\strong{Algèbre}}\\
+  \multicolumn{3}{l}{\emph{Algèbre générale}}\\
+  \texttt{Sym} & $\Sym$ & groupe symétrique\\
+  \texttt{Alt} & $\Alt$ & groupe alterné\\
+  \multicolumn{3}{l}{\emph{Algèbre linéaire}}\\
   \midrule
-  \multicolumn{3}{c}{\strong{Analyse}}\\
-  \multicolumn{3}{c}{\emph{Calcul différentiel}}\\
-  \multicolumn{3}{c}{\emph{Topologie}}\\
+  \multicolumn{3}{l}{\strong{Analyse}}\\
+  \multicolumn{3}{l}{\emph{Calcul différentiel}}\\
+  \multicolumn{3}{l}{\emph{Topologie}}\\
   \midrule
-  \multicolumn{3}{c}{\strong{Probabilités}}\\
+  \multicolumn{3}{l}{\strong{Probabilités}}\\
   \midrule
-  \multicolumn{3}{c}{\strong{Arithmétique}}\\
-  \midrule
+  \multicolumn{3}{l}{\strong{Arithmétique}}\\
   \texttt{Zmod\{n\}} &  $\Zmod{n}$ & classe d’équivalence modulo $n$ \\
   \texttt{Primes} & $\Primes$ & ensemble des nombres premiers \\
   \texttt{divides} & $d\divides a$ & relation de divisibilité \\

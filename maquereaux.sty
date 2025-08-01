@@ -8,6 +8,12 @@
 \RequirePackage[french]{babel}
 
 \RequirePackage{amsmath}
+\RequirePackage{mathtools}
+
+% preamble : paired delimiters
+\DeclarePairedDelimiterX{\pairedbrackets}[1]{(}{)}{#1}
+\DeclarePairedDelimiterX{\pairedcurly}[1]{\{}{\}}{#1}
+\DeclarePairedDelimiterX{\pairedrectangular}[1]{[}{]}{#1}
 
 % Symboles mathématiques
 
@@ -19,14 +25,23 @@
 
 % GÉNÉRIQUE
 
+% ────────────────────────────────────────────────────────────────────────────────
+% (GÉNÉRIQUE)
+% ────────────────────────────────────────────────────────────────────────────────
+
 % constantes et symboles
 \renewcommand\d{\,\mathrm{d}}                              % différentielle
 \DeclareMathOperator{\e}{e} % nombre e
 \renewcommand\i{\mathrm{i}}
 \newcommand\gold{\varphi} % nombre d’or
 
+% opérateurs génériques
 \newcommand\kro[2]{\delta_{#1,#2}} % symbole de Kronecker
-\newcommand\inv[1]{#1^{-1}} % inverse
+\newcommand\ind{\mathbb{1}} % fonction indicatrice
+
+% ────────────────────────────────────────────────────────────────────────────────
+% (THÉORIE DES ENSEMBLES)
+% ────────────────────────────────────────────────────────────────────────────────
 
 \newcommand\longto{\longrightarrow} % longue flèche
 
@@ -42,10 +57,6 @@
 % écriture d’ensembles
 
 \newcommand\sa{\,|\,} % such as = tel que
-
-% TODO: traduire ces commandes en anglais proprement
-\newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
-\newcommand\EnsA[2]{\left\{#1~;~#2\right\}} % ensemble décrit analytiquement
 
 % fonctions usuelles (autres opérateurs)
 \DeclareMathOperator\ch{ch} % cosinus hyperbolique
@@ -65,27 +76,30 @@
 \newcommand\K{\ens{K}}                                  % corps usuel, R ou C.
 \newcommand\F{\ens{F}}                                  % corps à p éléments
 
-\newcommand\card[1]{\mathrm{Card}\left\{#1\right\}}                    % Cardinal (notations usuelles : #, Card, |·|)
+% TODO: traduire ces commandes en anglais proprement
+\newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
+\newcommand\EnsA[2]{\left\{#1~;~#2\right\}} % ensemble décrit analytiquement
+
+\newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}}                    % Cardinal (notations usuelles : #, Card, |·|)
 % \newcommand\card[1]{\left\{#1\right\}}
 % \newcommand\card[1]{|#1|}
-\newcommand\parts[1]{\mathcal{P}\left(#1\right)}      % parties de E
+\newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
 
-\newcommand\comp[1]{\overline{#1}}                    % complémentaire d'un ensemble
+\newcommand\comp[1]{\bar{#1}}                    % complémentaire d'un ensemble
 
-% ALGÈBRE
+% ────────────────────────────────────────────────────────────────────────────────
+% (ALGÈBRE)
+% ────────────────────────────────────────────────────────────────────────────────
 
 % Algèbre générale
 
-% ensembles génériques
 \newcommand\ensS[1]{\mathfrak{#1}}                      % notation des ensembles de permutations : classiques ou mathfrak
 \newcommand\Sym{\ensS{S}}                               % groupe symétrique (permutations)
 \newcommand\Alt{\ensS{A}}                               % groupe alterné
 
-% relations
-\newcommand\rel{\mathcal{R}}                            % Relation binaire
 \DeclareMathOperator{\iso}{\cong}                      % relation d'isomorphisme (groupes, anneaux, etc.)
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
-\DeclareMathOperator{\disting}{\triangleleft} % sous-groupe distingué
+\DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
@@ -137,19 +151,22 @@
 \DeclareMathOperator{\codim}{codim}            % Codimension
 \DeclareMathOperator{\com}{com} % Comatrice
 
+% TODO: passer cette commande en minuscule, car moralement c’est une fonction
+% (qui moralament donne un ensemble cela dit)
 \DeclareMathOperator\Sp{Sp}                      % Spectre
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (ANALYSE)
 % ────────────────────────────────────────────────────────────────────────────────
 
-\newcommand\abs[1]{\left| #1\right|} % Valeur absolue
+% \newcommand\abs[1]{\left| #1\right|} % Valeur absolue
+\DeclarePairedDelimiter\abs{\lvert}{\rvert} % valeur absolue
 \newcommand\norme[1]{\left\Vert #1\right\Vert}          % Norme
 \newcommand\triple[1]{\left|\left|\left|#1\right|\right|\right|} % norme triple
 \newcommand\ps[2]{\left\langle #1 ~|~ #2\right\rangle}  % Produit scalaire
 
 % ────────────────────────────────────────────────────────────────────────────────
-% (Différentiation)
+% (CALCUL DIFFÉRENTIEL)
 
 \newcommand\diff[2]{\d #1_{#2}} % Différentielle (notation df_a)
 % \newcommand\diff[2]{\d #1(#2)} % Différentielle (notation df(a))
@@ -160,15 +177,19 @@
 \newcommand\dpar[2]{\partial_{#2} #1}    % Derivee partielle
 \newcommand\dnpar[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}   % nième derivee partielle
 
-\DeclareMathOperator{\grad}{\nabla}                     % Gradient
-\DeclareMathOperator{\lap}{\Delta}                      % Laplacien
+\newcommand\grad{\nabla}            % gradient (version avec nabla)
+% \newcommand\grad{\overrightarrow{\mathrm{grad}}} % gradient (version avec grad fléché)
+% \renewcommand\div{\mathrm{div}} % divergence
+\newcommand\rot{\overrightarrow{\mathrm{rot}}} % rotationnel
+\newcommand\lap{\Delta} % laplacien
 
 \DeclareMathOperator{\Jac}{Jac} % matrice jacobienne
 \newcommand\detjac[2]{\mathrm{J}_{#1}\left(#2\right)} % déterminant jacobien
-\renewcommand{\div}{\mathrm{div}} % divergence
 \newcommand\hess[1]{\mathcal{H}#1} % hessienne
 
-% Topologie
+% ────────────────────────────────────────────────────────────────────────────────
+% (TOPOLOGIE)
+
 \newcommand\Boule[2]{B\left(#1,#2\right)}               % Boule (ouverte) en a de rayon r
 \newcommand\Boulef[2]{\bar{B}\left(#1,#2\right)}        % Boule fermée en a de rayon r
 
@@ -181,14 +202,21 @@
 \newcommand\SConv[1]{\mathcal{C}\left(#1\right)}        % Ensemble des suites convergentes dans E
 \newcommand\SConvz[1]{\mathcal{C}_0\left(#1\right)}     % Ensemble des suites convergeant vers 0 dans E.
 
-% PROBABILITÉS
+% ────────────────────────────────────────────────────────────────────────────────
+% (PROBABILITÉS)
+% ────────────────────────────────────────────────────────────────────────────────
 
 % opérateurs usuelles
-\newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
+% TODO: corriger l’espacement du contenu avec les délimiteurs
+
+% \newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
+\newcommand\Prob[1]{\mathbb{P}\pairedbrackets*{#1}}                 % Probabilité
 % \newcommand\Prob[1]{\mathrm{P}\left(#1\right)}                 % Probabilité (variante, P simple droit)
-\newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
-\newcommand\Var[1]{\mathrm{Var}\left(#1\right)}                  % Variance
-\newcommand\sd[1]{\sigma\left(#1\right)}                  % Écart-type (standard deviation)
+% \newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
+\newcommand\Esp[1]{\mathbb{E}\pairedrectangular*{#1}} % espérance
+% \newcommand\Var[1]{\mathrm{Var}\left(#1\right)}                  % Variance
+\newcommand\Var[1]{\mathrm{Var}\pairedbrackets*{#1}}                  % Variance
+\newcommand\sd[1]{\sigma\pairedbrackets*{#1}}                  % Écart-type (standard deviation)
 % TODO: décider si macro sous la forme \Cov{}{}
 \DeclareMathOperator{\Cov}{Cov}                  % Covariance
 

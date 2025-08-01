@@ -1,19 +1,9 @@
-\documentclass{article}
+\documentclass{atomathematyk}
 
 \usepackage{maquereaux}
 
 \usepackage{booktabs}
-
-% \usepackage{sectsty}
-% \allsectionsfont{\sffamily}
-
-\usepackage{fontspec}
-\setmainfont{IBM Plex Serif}
-\setsansfont{IBM Plex Sans}
-\setmonofont{IBM Plex Mono}
-
-\usepackage{unicode-math}
-\setmathfont{IBM Plex Math}
+\usepackage{longtable}
 
 \usepackage[margin=0.5in]{geometry}
 
@@ -32,11 +22,11 @@
 
 De manière générale, on essaie de suivre les conventions mathématiques : une commande pour un ensemble est en majuscule, tandis qu’une fonction ou un opérateur sera en minuscule.
 
-Par ailleurs, pour être le plus consistant possible avec les autres commandes déjà existantes en LaTeX, les commandes doivent être nommées en anglais.
+Par ailleurs, pour être le plus consistant possible avec les autres commandes déjà existantes en \LaTeX, les commandes doivent être nommées en anglais, dans la mesure du possible et de la convenance.
 
 \section{Listes des commandes}
 \centering
-\begin{tabular}{lcl}
+\begin{longtable}{lcl}
   \toprule
   Commande & Affichage & Signification\\
   \midrule
@@ -45,10 +35,14 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{e} & $\e$ & constante exponentielle\\
   \texttt{i} & $\i$ & nombre $\i$\\
   \texttt{gold} & $\gold$ & nombre d’or\\
+  \multicolumn{3}{l}{\emph{Opérateurs génériques}}\\
   \texttt{kro\{i\}\{j\}} & $\kro{i}{j}$ & symbole de Kronecker\\
+  \texttt{ind} & $\ind$ & fonction indicatrice\\
+  \midrule
+  \multicolumn{3}{l}{\strong{Théorie des ensembles}}\\
   \texttt{longto} & $\longto$ & longue flèche \\
   \texttt{function\{f\}\{A\}\{B\}\{x\}\{f(x)\}} & $\function{f}{A}{B}{x}{f(x)}$ & définition de fonction \\
-  \multicolumn{3}{l}{\emph{Ensembles}}\\
+  \multicolumn{3}{l}{\emph{Ensembles usuels}}\\
   \texttt{N} & $\N$ & ensemble des entiers naturels\\
   \texttt{Z} & $\Z$ & ensemble des entiers relatifs\\
   \texttt{Q} & $\Q$ & ensemble des nombres rationnels\\
@@ -63,22 +57,57 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \multicolumn{3}{l}{\emph{Algèbre générale}}\\
   \texttt{Sym} & $\Sym$ & groupe symétrique\\
   \texttt{Alt} & $\Alt$ & groupe alterné\\
+  \texttt{iso} & $\iso$ & relation d’isomorphisme\\
+  \texttt{subgroup} & $\subgroup$ & relation de sous-groupe\\
+  \texttt{normal} & $\normal$ & relation de sous-groupe normal\\
   \multicolumn{3}{l}{\emph{Algèbre linéaire}}\\
+  \texttt{M} & $\M$ & ensemble de matrices\\
+  \texttt{GL} & $\GL$ & groupe linéaire\\
+  \texttt{SL} & $\SL$ & groupe spécial linéaire\\
+  \texttt{Orth} & $\Orth$ & groupe orthogonal\\
+  \texttt{SO} & $\SO$ & groupe spécial orthogonal\\
+  % \texttt{t\{A\}} & $\t{A}$ & transposée de la matrice $A$\\
+  \texttt{tr} & $\tr$ & trace\\
+  \texttt{ker} & $\ker$ & noyau\\
+  \texttt{im} & $\im$ & image\\
+  \texttt{rg} & $\rg$ & rang\\
+  \texttt{codim} & $\codim$ & codimension\\
+  \texttt{com} & $\com$ & comatrice\\
+  \texttt{Sp} & $\Sp$ & spectre\\
   \midrule
   \multicolumn{3}{l}{\strong{Analyse}}\\
   \multicolumn{3}{l}{\emph{Calcul différentiel}}\\
+  \texttt{diff\{f\}\{a\}} & $\diff{f}{a}$ & différentielle de $f$ en $a$\\
+  \texttt{grad} & $\grad$ & gradient\\
+  % \texttt{div} & $\div$ & divergence\\
+  \texttt{rot} & $\rot$ & rotationnel\\
+  \texttt{lap} & $\lap$ & laplacien\\
+  \texttt{Jac} & $\Jac$ & matrice jacobienne\\
+  \texttt{detjac\{f\}\{a\}} & $\detjac{f}{a}$ & déterminant jacobien de $f$ en $a$\\
+  \texttt{hess\{f\}} & $\hess{f}$ & matrice hessienne de $f$ en $a$\\
   \multicolumn{3}{l}{\emph{Topologie}}\\
+  \texttt{abs\{x\}} & $\abs{x}$ & valeur absolue (ou module) de $x$\\
+  \texttt{norme\{x\}} & $\norme{x}$ & norme de $x$\\
   \midrule
   \multicolumn{3}{l}{\strong{Probabilités}}\\
+  \multicolumn{3}{l}{\emph{Opérateurs usuels}}\\
+  \texttt{Prob\{A\}} & $\Prob{A}$ & probabilité d’un évènement $A$\\
+  \texttt{Esp\{X\}} & $\Esp{X}$ & espérance d’une variable aléatoire $X$\\
+  \texttt{Var\{X\}} & $\Var{X}$ & variance d’une variable aléatoire $X$\\
+  \texttt{sd\{X\}} & $\sd{X}$ & écart-type d’une variable aléatoire $X$\\
+  \multicolumn{3}{l}{\emph{Lois discrètes usuelles}}\\
+  \texttt{Bernoulli\{p\}} & $\Bernoulli{p}$ & loi de Bernoulli de paramètre $p$\\
+  \texttt{Binom\{n\}\{p\}} & $\Binom{n}{p}$ & loi binomiale de paramètres $(n,p)$\\
+  \multicolumn{3}{l}{\emph{Lois continues usuelles}}\\
   \midrule
   \multicolumn{3}{l}{\strong{Arithmétique}}\\
   \texttt{Zmod\{n\}} &  $\Zmod{n}$ & classe d’équivalence modulo $n$ \\
   \texttt{Primes} & $\Primes$ & ensemble des nombres premiers \\
-  \texttt{divides} & $d\divides a$ & relation de divisibilité \\
+  \texttt{divides} & $\divides$ & relation de divisibilité \\
   \texttt{congr\{a\}\{b\}\{n\}} & $\congr{a}{b}{n}$ & $a$ congru à $b$ modulo $n$\\
   \texttt{pgcd\{a\}\{b\}} & $\pgcd{a}{b}$ & PGCD \\
   \texttt{ppcm\{a\}\{b\}} & $\ppcm{a}{b}$ & PPCM \\
   \bottomrule
-\end{tabular}
+\end{longtable}
 
 \end{document}

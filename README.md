@@ -20,4 +20,5 @@ When creating a command, I try to respect the following principles :
 
 - write the command in english (so that it’s consistent with all other existing $\LaTeX$ commands) ;
 - respect the mathematical conventions : if representing a set, the command should start with an uppercase letter ; otherwise, typically a function or operator, it should start with a lowercase letter ;
-- of course, provide the best typesetting possible.
+- a command representing a function or a common mathematical constant should write the function with roman (e.g. upright) font style ;
+- of course, provide the best mathematical typesetting possible.

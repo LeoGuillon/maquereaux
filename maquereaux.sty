@@ -207,7 +207,9 @@
 % ────────────────────────────────────────────────────────────────────────────────
 
 % opérateurs usuelles
-% TODO: corriger l’espacement du contenu avec les délimiteurs
+% TODO: mettre en place pour chaque fonction avec des délimiteurs, deux fonction différentes :
+% une «inline», avec des délimiteurs de taille fixe pour des caractères pas en displaystyle
+% une «auto», avec des délimiteurs de taille variable, utile en displaystyle
 
 % \newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
 \newcommand\Prob[1]{\mathbb{P}\pairedbrackets*{#1}}                 % Probabilité

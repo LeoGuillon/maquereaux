@@ -1,4 +1,4 @@
-\documentclass{atomathematyk}
+\documentclass[print]{atomathematyk}
 
 \usepackage{maquereaux}
 
@@ -43,12 +43,13 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{longto} & \(\longto\) & longue flèche \\
   \texttt{function\{f\}\{A\}\{B\}\{x\}\{f(x)\}} & \(\function{f}{A}{B}{x}{f(x)}\) & définition de fonction \\
   \multicolumn{3}{l}{\emph{Ensembles usuels}}\\
-  \texttt{N} & \(\N\) & ensemble des entiers naturels\\
-  \texttt{Z} & \(\Z\) & ensemble des entiers relatifs\\
-  \texttt{Q} & \(\Q\) & ensemble des nombres rationnels\\
-  \texttt{R} & \(\R\) & ensemble des nombres réels\\
-  \texttt{C} & \(\C\) & ensemble des nombres complexes\\
-  \texttt{H} & \(\H\) & ensemble des quaternions\\
+  \texttt{N} & \(\N\) & entiers naturels\\
+  \texttt{Z} & \(\Z\) & entiers relatifs\\
+  \texttt{Q} & \(\Q\) & nombres rationnels\\
+  \texttt{R} & \(\R\) & nombres réels\\
+  \texttt{C} & \(\C\) & nombres complexes\\
+  \texttt{H} & \(\H\) & quaternions\\
+  \multicolumn{3}{l}{\emph{Opérateurs ensemblistes}}\\
   \texttt{card\{E\}} & \(\card{E}\) & cardinal de l’ensemble \(E\)\\
   \texttt{parts\{E\}} & \(\parts{E}\) & ensemble des parties de l’ensemble \(E\)\\
   \texttt{comp\{E\}} & \(\comp{E}\) & complémentaire de l’ensemble \(E\)\\
@@ -60,8 +61,15 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{iso} & \(\iso\) & relation d’isomorphisme\\
   \texttt{subgroup} & \(\subgroup\) & relation de sous-groupe\\
   \texttt{normal} & \(\normal\) & relation de sous-groupe normal\\
-  \texttt{center\{G\}} & $\center{G}$ & centre du groupe \(G\).\\
+  \texttt{centre\{G\}} & \(\centre{G}\) & centre du groupe \(G\).\\
+  \texttt{Hom} & \(\Hom\) & (homo)morphismes de groupes \\
+  \texttt{Iso} & \(\Iso\) & isomorphismes de groupes \\
+  \texttt{End} & \(\End\) & endomorphismes de groupes \\
+  \texttt{Aut} & \(\Aut\) & automorphismes de groupes \\
   \multicolumn{3}{l}{\emph{Algèbre linéaire}}\\
+  \texttt{Lin} & \(\Lin\) & ensemble d’applications linéaires\\
+  \texttt{Quad} & \(\Quad\) & ensemble de formes quadratiques\\
+  \texttt{dual\{E\}} & \(\dual{E}\) & dual de l’espace vectoriel \(E\)\\
   \texttt{M} & \(\M\) & ensemble de matrices\\
   \texttt{GL} & \(\GL\) & groupe linéaire\\
   \texttt{SL} & \(\SL\) & groupe spécial linéaire\\
@@ -77,16 +85,20 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{Sp} & \(\Sp\) & spectre\\
   \midrule
   \multicolumn{3}{l}{\strong{Analyse}}\\
-  \multicolumn{3}{l}{\emph{Calcul différentiel}}\\
+  \multicolumn{3}{l}{\emph{Calcul différentiel et intégral}}\\
+  \texttt{d} & \(\d\) & opérateur différentiel élémentaire\\
   \texttt{diff\{f\}\{a\}} & \(\diff{f}{a}\) & différentielle de \(f\) en \(a\)\\
   \texttt{grad} & \(\grad\) & gradient\\
   % \texttt{div} & \(\div\) & divergence\\
   \texttt{rot} & \(\rot\) & rotationnel\\
   \texttt{lap} & \(\lap\) & laplacien\\
-  \texttt{Jac} & \(\Jac\) & matrice jacobienne\\
+  \texttt{jac} & \(\jac\) & matrice jacobienne\\
   \texttt{detjac\{f\}\{a\}} & \(\detjac{f}{a}\) & déterminant jacobien de \(f\) en \(a\)\\
   \texttt{hess\{f\}} & \(\hess{f}\) & matrice hessienne de \(f\) en \(a\)\\
   \multicolumn{3}{l}{\emph{Topologie}}\\
+  \texttt{interior\{A\}} & \(\interior{A}\) & intérieur de \(A\)\\
+  \texttt{adh\{A\}} & \(\adh{A}\) & adhérence de \(A\)\\
+  \texttt{front\{A\}} & \(\front{A}\) & frontière de \(A\)\\
   \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
   \texttt{norme\{x\}} & \(\norme{x}\) & norme de \(x\)\\
   \midrule
@@ -99,9 +111,9 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \multicolumn{3}{l}{\emph{Lois discrètes usuelles}}\\
   \texttt{Bernoulli\{p\}} & \(\Bernoulli{p}\) & loi de Bernoulli de paramètre \(p\)\\
   \texttt{Binom\{n\}\{p\}} & \(\Binom{n}{p}\) & loi binomiale de paramètres \((n,p)\)\\
-  \texttt{Poisson\{\lambda\}} & \(\Poisson{\lambda}\) & loi de Poisson de paramètre \(\lambda\)\\
+  \texttt{Poisson\{\backslash lambda\}} & \(\Poisson{\lambda}\) & loi de Poisson de paramètre \(\lambda\)\\
   \texttt{Geom\{p\}} & \(\Geom{p}\) & loi géométrique de paramètre \(p\)\\
-  \texttt{Hyper\{N,n,k\}} & \(\Hyper{N,n,k}\) & loi hypergéométrique de paramètres \((N,n,k)\)\\
+  \texttt{Hyper\{N\}\{n\}\{k\}} & \(\Hyper{N}{n}{k}\) & loi hypergéométrique de paramètres \((N,n,k)\)\\
   \multicolumn{3}{l}{\emph{Lois continues usuelles}}\\
   \texttt{Exp\{\backslash lambda\}} & \(\Exp{\lambda}\) & loi exponentielle de paramètre \(\lambda\)\\
   \texttt{Normale\{\backslash mu\}\{\backslash sigma 2\}} & \(\Normale{\mu}{\sigma^2}\) & loi normale de paramètres \((\mu, \sigma)\)\\
@@ -112,8 +124,8 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{Primes} & \(\Primes\) & ensemble des nombres premiers \\
   \texttt{divides} & \(\divides\) & relation de divisibilité \\
   \texttt{congr\{a\}\{b\}\{n\}} & \(\congr{a}{b}{n}\) & \(a\) congru à \(b\) modulo \(n\)\\
-  \texttt{pgcd\{a\}\{b\}} & \(\pgcd{a}{b}\) & PGCD \\
-  \texttt{ppcm\{a\}\{b\}} & \(\ppcm{a}{b}\) & PPCM \\
+  \texttt{pgcd\{a\}\{b\}} & \(\pgcd{a}{b}\) & PGCD \(a\) et \(b\)\\
+  \texttt{ppcm\{a\}\{b\}} & \(\ppcm{a}{b}\) & PPCM \(a\) et \(b\)\\
   \bottomrule
 \end{longtable}
 

@@ -100,15 +100,16 @@
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
-\newcommand\center[1]{Z(#1)} % centre d’un groupe
+\newcommand\centre[1]{Z(#1)} % centre d’un groupe
+% NOTE: en français, car la commande \center est déjà prise en LaTeX
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
 % ensembles de morphismes
-\newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
-\newcommand\Iso{\mathrm{Iso}}                             % l'ensemble des isomorphismes de groupes
-% \newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
-\newcommand\Aut{\mathrm{Aut}}                             % l'ensemble des automorphismes de groupe
+\DeclareMathOperator{\Hom}{Hom} % (homo)morphismes de groupes
+\DeclareMathOperator{\Iso}{Iso} % isomorphismes de groupes
+\DeclareMathOperator{\End}{End} % endomorphismes de groupes
+\DeclareMathOperator{\Aut}{Aut} % automorphismes de groupes
 
 \DeclareMathOperator{\sign}{\varepsilon}                  % Signature d'une permutation
 
@@ -118,15 +119,14 @@
 
 \DeclareMathOperator{\Vect}{Vect} % ensemble engendré par une famille de vecteurs
 
-\newcommand\Lin[2]{\mathcal{L}(#1, #2)}                 % ensemble des applications linéaires
-\newcommand\Linc[2]{\mathcal{L}_c(#1, #2)}              % ensemble des applications linéaires continues
+\newcommand\Lin{\mathcal{L}}                 % ensemble d’applications linéaires
 \newcommand\FLin[1]{\Lin{#1}{\R}} % ensemble des formes linéaires
 \newcommand\dual[1]{#1^*} % espace dual
 
-\newcommand\End[1]{\mathcal{L}(#1)}              % ensemble des endomorphismes
+% \newcommand\End[1]{\mathcal{L}(#1)}              % ensemble des endomorphismes
 
 \newcommand\Bil[2]{\mathcal{L}_2(#1, #2)}               % ensemble des formes bilinéaires
-\newcommand\Quad[1]{\mathcal{Q}(#1)}                    % ensemble des formes quadratiques
+\newcommand\Quad{\mathcal{Q}}                    % ensemble des formes quadratiques
 
 \newcommand\M{\mathcal{M}}                            % l'ensemble des matrices
 
@@ -141,7 +141,7 @@
 \newcommand\vect[1]{\mathbf{#1}}                        % écriture d'un vecteur
 \DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
 
-\renewcommand\t[1]{#1^\top}                             % Transposée (version T après)
+\renewcommand{\t}[1]{#1^\top}                             % Transposée (version T après)
 % \renewcommand\t[1]{{}^t #1}                             % Transposée (version t avant)
 
 \DeclareMathOperator{\tr}{Tr}                  % Trace
@@ -184,7 +184,7 @@
 \newcommand\rot{\overrightarrow{\mathrm{rot}}} % rotationnel
 \newcommand\lap{\Delta} % laplacien
 
-\DeclareMathOperator{\Jac}{Jac} % matrice jacobienne
+\DeclareMathOperator{\jac}{Jac} % matrice jacobienne
 \newcommand\detjac[2]{\mathrm{J}_{#1}\left(#2\right)} % déterminant jacobien
 \newcommand\hess[1]{\mathcal{H}#1} % hessienne
 
@@ -195,7 +195,7 @@
 \newcommand\Boulef[2]{\bar{B}\left(#1,#2\right)}        % Boule fermée en a de rayon r
 
 \newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
-\newcommand\adh[1]{\overline{#1}}                            % adhérence
+\newcommand\adh[1]{\bar{#1}}                            % adhérence
 \newcommand\front[1]{\mathrm{Fr}(#1)}                   % frontière
 
 \newcommand\Bornee[2]{B\left(#1, #2\right)}             % Ensemble des application bornées de X dans E
@@ -233,7 +233,7 @@
 % lois continues
 \newcommand\Exp[1]{\mathcal{E}(#1)}                       % Loi exponentielle
 \newcommand\Normale[2]{\mathcal{N}\left(#1, #2\right)}    % Loi normale
-\newcommand\chid[1]{\chi_{#1}^2}                          % Loi du chi-deux
+\newcommand\chid[1]{\chi^{2}_{#1}}                          % Loi du chi-deux
 
 \DeclareMathOperator{\GEV}{\mathrm{GEV}}                  % Loi GEV (Generalized Extreme Values)
 \DeclareMathOperator{\GPD}{\mathrm{GP}}                   % Loi GPD (Generalized Pareto Distribution)

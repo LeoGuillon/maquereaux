@@ -26,6 +26,14 @@
 % TODO: clean all comments after commands just to be uniform in the positioning
 
 % ────────────────────────────────────────────────────────────────────────────────
+% (MISE EN FORME)
+% ────────────────────────────────────────────────────────────────────────────────
+
+\newcommand\mathbi[1]{\textbf{\em #1}} % math bold + italic
+\newcommand\mathens[1]{\mathbb{#1}} % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
+% \newcommand\mathens[1]{\mathbf{#1}}
+
+% ────────────────────────────────────────────────────────────────────────────────
 % (GÉNÉRIQUE)
 % ────────────────────────────────────────────────────────────────────────────────
 
@@ -63,18 +71,16 @@
 \DeclareMathOperator\sh{sh} % sinus hyperbolique
 
 % ensembles de nombres
-\newcommand\ens[1]{\mathbb{#1}}                         % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
-% \newcommand\ens[1]{\mathbf{#1}}
 
-\newcommand\N{\ens{N}}                                  % l'ensemble des naturels
-\newcommand\Z{\ens{Z}}                                  % l'ensemble des relatifs
-\newcommand\Q{\ens{Q}}                                  % l'ensemble des rationnels
-\newcommand\R{\ens{R}}                                  % l'ensemble des reels
-\newcommand\C{\ens{C}}                                  % l'ensemble des complexes
-\renewcommand\H{\ens{H}}                                  % l'ensemble des quaternions
+\newcommand\N{\mathens{N}} % naturels
+\newcommand\Z{\mathens{Z}} % relatifs
+\newcommand\Q{\mathens{Q}} % rationnels
+\newcommand\R{\mathens{R}} % reels
+\newcommand\C{\mathens{C}} % complexes
+\renewcommand\H{\mathens{H}} % quaternions
 
-\newcommand\K{\ens{K}}                                  % corps usuel, R ou C.
-\newcommand\F{\ens{F}}                                  % corps à p éléments
+\newcommand\K{\mathens{K}} % corps usuel, R ou C.
+\newcommand\F{\mathens{F}} % corps à p éléments
 
 % TODO: traduire ces commandes en anglais proprement
 \newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
@@ -100,7 +106,7 @@
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
-\newcommand\centre[1]{Z(#1)} % centre d’un groupe
+\newcommand\centre[1]{\mathcal{Z}(#1)} % centre d’un groupe
 % NOTE: en français, car la commande \center est déjà prise en LaTeX
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau

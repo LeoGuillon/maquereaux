@@ -1,11 +1,6 @@
 \documentclass[print]{atomathematyk}
 
-\usepackage{maquereaux}
-
-\usepackage{booktabs}
 \usepackage{longtable}
-
-\usepackage[margin=0.5in]{geometry}
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (METADATA)
@@ -29,6 +24,10 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
 \begin{longtable}{lcl}
   \toprule
   Commande & Affichage & Signification\\
+  \midrule
+  \multicolumn{3}{l}{\strong{Mise en forme mathématique}}\\
+  \texttt{mathbi\{X\}} & \(\mathbi{X}\) & lettre en gras et italique\\
+  \texttt{mathens\{N\}} & \(\mathens{N}\) & notation des ensembles usuels\\
   \midrule
   \multicolumn{3}{l}{\strong{Généralités}}\\
   \multicolumn{3}{l}{\emph{Constantes mathématiques}}\\

@@ -30,8 +30,8 @@
 % ────────────────────────────────────────────────────────────────────────────────
 
 \newcommand\mathbi[1]{\textbf{\em #1}} % math bold + italic
-\newcommand\mathens[1]{\mathbb{#1}} % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
-% \newcommand\mathens[1]{\mathbf{#1}}
+\newcommand\mathset[1]{\mathbb{#1}} % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
+% \newcommand\mathset[1]{\mathbf{#1}}
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (GÉNÉRIQUE)
@@ -72,15 +72,15 @@
 
 % ensembles de nombres
 
-\newcommand\N{\mathens{N}} % naturels
-\newcommand\Z{\mathens{Z}} % relatifs
-\newcommand\Q{\mathens{Q}} % rationnels
-\newcommand\R{\mathens{R}} % reels
-\newcommand\C{\mathens{C}} % complexes
-\renewcommand\H{\mathens{H}} % quaternions
+\newcommand\N{\mathset{N}} % naturels
+\newcommand\Z{\mathset{Z}} % relatifs
+\newcommand\Q{\mathset{Q}} % rationnels
+\newcommand\R{\mathset{R}} % reels
+\newcommand\C{\mathset{C}} % complexes
+\renewcommand\H{\mathset{H}} % quaternions
 
-\newcommand\K{\mathens{K}} % corps usuel, R ou C.
-\newcommand\F{\mathens{F}} % corps à p éléments
+\newcommand\K{\mathset{K}} % corps usuel, R ou C.
+\newcommand\F{\mathset{F}} % corps à p éléments
 
 % TODO: traduire ces commandes en anglais proprement
 \newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
@@ -99,9 +99,9 @@
 
 % Algèbre générale
 
-\newcommand\ensS[1]{\mathfrak{#1}}                      % notation des ensembles de permutations : classiques ou mathfrak
-\newcommand\Sym{\ensS{S}}                               % groupe symétrique (permutations)
-\newcommand\Alt{\ensS{A}}                               % groupe alterné
+\newcommand\ensS[1]{\mathfrak{#1}} % notation des ensembles de permutations : classiques ou mathfrak
+\newcommand\Sym{\ensS{S}} % groupe symétrique (permutations)
+\newcommand\Alt{\ensS{A}} % groupe alterné
 
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
 \DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
@@ -122,34 +122,35 @@
 
 \DeclareMathOperator{\Id}{Id} % application identité
 
-% Algèbre linéaire
+% ────────────────────────────────────────────────────────────────────────────────
+% (ALGÈBRE LINÉAIRE)
 
 \DeclareMathOperator{\Vect}{Vect} % ensemble engendré par une famille de vecteurs
 
-\newcommand\Lin{\mathcal{L}}                 % ensemble d’applications linéaires
+\newcommand\Lin{\mathcal{L}} % ensemble d’applications linéaires
 \newcommand\FLin[1]{\Lin{#1}{\R}} % ensemble des formes linéaires
 \newcommand\dual[1]{#1^*} % espace dual
 
-% \newcommand\End[1]{\mathcal{L}(#1)}              % ensemble des endomorphismes
+\newcommand\Bil[2]{\mathcal{L}_2(#1, #2)} % ensemble des formes bilinéaires
+\newcommand\Quad{\mathcal{Q}} % ensemble des formes quadratiques
 
-\newcommand\Bil[2]{\mathcal{L}_2(#1, #2)}               % ensemble des formes bilinéaires
-\newcommand\Quad{\mathcal{Q}}                    % ensemble des formes quadratiques
+\newcommand\M{\mathcal{M}} % l'ensemble des matrices
 
-\newcommand\M{\mathcal{M}}                            % l'ensemble des matrices
+\newcommand\GL{\mathrm{GL}} % groupe linéaire (matrices inversibles)
+\newcommand\SL{\mathrm{SL}} % groupe spécial linéaire (matrices de déterminant 1)
+\newcommand\Orth{\mathcal{O}} % groupe orthogonal (matrices dont l'inverse est la transposée)
+\newcommand\SO{\mathrm{SO}} % groupe spécial orthogonal (matrices orthogonales de déterminant 1)
 
-\newcommand\GL{\mathrm{GL}}                             % groupe linéaire (matrices inversibles)
-\newcommand\SL{\mathrm{SL}}                             % groupe spécial linéaire (matrices de déterminant 1)
-\newcommand\Orth{\mathcal{O}}                           % groupe orthogonal (matrices dont l'inverse est la transposée)
-\newcommand\SO{\mathrm{SO}}                             % groupe spécial orthogonal (matrices orthogonales de déterminant 1)
+\renewcommand\S{\mathcal{S}} % ensemble des matrices symétriques
+\newcommand\Diag{\mathrm{D}} % ensemble des matrices diagonales
 
-\renewcommand\S{\mathcal{S}}                            % ensemble des matrices symétriques
-\newcommand\Diag{\mathrm{D}}                            % ensemble des matrices diagonales
-
-\newcommand\vect[1]{\mathbf{#1}}                        % écriture d'un vecteur
+\newcommand\vect[1]{\mathbf{#1}} % écriture d'un vecteur
 \DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
 
-\renewcommand{\t}[1]{#1^\top}                             % Transposée (version T après)
-% \renewcommand\t[1]{{}^t #1}                             % Transposée (version t avant)
+% BUG: \t conflict with the accent
+% \newcommand\trans[1]{#1^\top} % Transposée (version T après)
+\newcommand\T[1]{#1^\top} % Transposée (version T après)
+\newcommand\adj[1]{#1^*} % matrice adjointe (ou transconjuguée, ou adjoint hermitienne)
 
 \DeclareMathOperator{\tr}{Tr}                  % Trace
 \renewcommand\ker{\mathrm{Ker}}                         % Noyau
@@ -162,7 +163,7 @@
 % TODO: passer cette commande en minuscule, car moralement c’est une fonction
 % (qui moralament donne un ensemble cela dit)
 \DeclareMathOperator\spectrum{Sp} % Spectre
-\DeclareMathOperator{\spradius}{\rho} % Rayon spectral
+\newcommand\spradius{\rho} % rayon spectral
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (ANALYSE)

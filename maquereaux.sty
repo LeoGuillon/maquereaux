@@ -104,19 +104,17 @@
 \newcommand\Alt{\ensS{A}} % groupe alterné
 
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
-\DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
-\newcommand\centre[1]{\mathcal{Z}(#1)} % centre d’un groupe
-% NOTE: en français, car la commande \center est déjà prise en LaTeX
+\newcommand\center[1]{Z(#1)} % centre d’un groupe
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
 % ensembles de morphismes
-\DeclareMathOperator{\Hom}{Hom} % (homo)morphismes de groupes
-\DeclareMathOperator{\Iso}{Iso} % isomorphismes de groupes
-\DeclareMathOperator{\End}{End} % endomorphismes de groupes
-\DeclareMathOperator{\Aut}{Aut} % automorphismes de groupes
+\newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
+\newcommand\Iso{\mathrm{Iso}}                             % l'ensemble des isomorphismes de groupes
+% \newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
+\newcommand\Aut{\mathrm{Aut}}                             % l'ensemble des automorphismes de groupe
 
 \DeclareMathOperator{\sign}{\varepsilon}                  % Signature d'une permutation
 
@@ -256,3 +254,5 @@
 \newcommand\congr[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
 \newcommand\pgcd[2]{#1\vee #2}
 \newcommand\ppcm[2]{#1\wedge #2}
+
+\newcommand\euler{\phi} % fonction d’Euler

@@ -83,7 +83,7 @@
 \newcommand\F{\mathset{F}} % corps à p éléments
 
 % TODO: traduire ces commandes en anglais proprement
-\newcommand\EnsP[2]{\left\{#1\tq#2\right\}} % ensemble décrit par une propriété
+\newcommand\EnsP[2]{\left\{#1\sa#2\right\}} % ensemble décrit par une propriété
 \newcommand\EnsA[2]{\left\{#1~;~#2\right\}} % ensemble décrit analytiquement
 
 \newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}}                    % Cardinal (notations usuelles : #, Card, |·|)
@@ -106,14 +106,17 @@
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
-\newcommand\center[1]{Z(#1)} % centre d’un groupe
+\newcommand\centre[1]{Z(#1)} % centre d’un groupe
+\newcommand\eng[1]{\langle#1\rangle} % sous-groupe engendré par une partie
+\DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
+\newcommand\groupind[2]{[#2:#1]} % indice d’un sous-groupe dans un groupe
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
 % ensembles de morphismes
 \newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
 \newcommand\Iso{\mathrm{Iso}}                             % l'ensemble des isomorphismes de groupes
-% \newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
+\newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
 \newcommand\Aut{\mathrm{Aut}}                             % l'ensemble des automorphismes de groupe
 
 \DeclareMathOperator{\sign}{\varepsilon}                  % Signature d'une permutation

@@ -107,9 +107,12 @@
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
 \newcommand\centre[1]{Z(#1)} % centre d’un groupe
-\newcommand\eng[1]{\langle#1\rangle} % sous-groupe engendré par une partie
+\newcommand\eng[1]{\left\langle#1\right\rangle} % sous-groupe engendré par une partie
 \DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
-\newcommand\groupind[2]{[#2:#1]} % indice d’un sous-groupe dans un groupe
+\newcommand\indice[2]{[#2:#1]} % indice d’un sous-groupe dans un groupe
+\newcommand\action[3]{#1\underset{#3}{\hookrightarrow} #2} % groupe opérant sur un ensemble
+\newcommand\orbite[1]{\mathcal{O}_#1} % orbite d’un élément
+\newcommand\stab[1]{\barwedge_#1} % stabilisateur d’un élément
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
@@ -198,20 +201,15 @@
 \newcommand\detjac[2]{\mathrm{J}_{#1}\left(#2\right)} % déterminant jacobien
 \newcommand\hess[1]{\mathcal{H}#1} % hessienne
 
+\newcommand\Class{\mathcal{C}} % Ensemble de fonctions continues ou de classe C…
+\newcommand\Lip{\mathcal{L}} % Ensemble des fonctions lipschitziennes
+
 % ────────────────────────────────────────────────────────────────────────────────
 % (TOPOLOGIE)
-
-\newcommand\Boule[2]{B\left(#1,#2\right)}               % Boule (ouverte) en a de rayon r
-\newcommand\Boulef[2]{\bar{B}\left(#1,#2\right)}        % Boule fermée en a de rayon r
 
 \newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
 \newcommand\adh[1]{\bar{#1}}                            % adhérence
 \newcommand\front[1]{\mathrm{Fr}(#1)}                   % frontière
-
-\newcommand\Bornee[2]{B\left(#1, #2\right)}             % Ensemble des application bornées de X dans E
-\newcommand\SBorn[1]{l^{\infty}\left(#1\right)}         % Ensemble des suites bornées dans E
-\newcommand\SConv[1]{\mathcal{C}\left(#1\right)}        % Ensemble des suites convergentes dans E
-\newcommand\SConvz[1]{\mathcal{C}_0\left(#1\right)}     % Ensemble des suites convergeant vers 0 dans E.
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (PROBABILITÉS)
@@ -254,8 +252,8 @@
 \newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
 
 \newcommand\divides{\,|\,} % divisibilité
-\newcommand\congr[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
+\newcommand\congru[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
 \newcommand\pgcd[2]{#1\vee #2}
 \newcommand\ppcm[2]{#1\wedge #2}
 
-\newcommand\euler{\phi} % fonction d’Euler
+\newcommand\indeuler{\varphi} % fonction indicatrice d’Euler

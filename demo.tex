@@ -1,4 +1,4 @@
-\documentclass[dark]{atomathematyk}
+\documentclass[print]{atomathematyk}
 
 \usepackage{longtable}
 
@@ -63,7 +63,10 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{centre\{G\}} & \(\centre{G}\) & centre du groupe \(G\).\\
   \texttt{eng\{A\}} & \(\eng{A}\) & sous-groupe engendré par \(A\)\\
   \texttt{semiprod} & \(\semiprod\) & produit semi-direct de groupes\\
-  \texttt{groupind}\{H\}\{G\} & \(\groupind{H}{G}\) & indice de \(H\) dans \(G\) \\
+  \texttt{indice\{H\}\{G\}} & \(\indice{H}{G}\) & indice de \(H\) dans \(G\)\\
+  \texttt{action\{G\}\{X\}\{\backslash varrho\}} & \(\action{G}{X}{\varrho}\) & groupe \(G\) opérant sur \(X\) par \(\varrho\)\\
+  \texttt{orbite\{x\}} & \(\orbite{x}\) & orbite de \(x\)\\
+  \texttt{stab\{x\}} & \(\stab{x}\) & stabilisateur de \(x\)\\
   \texttt{Hom} & \(\Hom\) & (homo)morphismes de groupes \\
   \texttt{Iso} & \(\Iso\) & isomorphismes de groupes \\
   \texttt{End} & \(\End\) & endomorphismes de groupes \\
@@ -105,6 +108,8 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{front\{A\}} & \(\front{A}\) & frontière de \(A\)\\
   \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
   \texttt{norme\{x\}} & \(\norme{x}\) & norme de \(x\)\\
+  \texttt{Class} & \(\Class\) & ensemble de fonctions continues\\
+  \texttt{Lip} & \(\Lip\) & ensemble de fonctions lipschitziennes\\
   \midrule
   \multicolumn{3}{l}{\strong{Probabilités}}\\
   \multicolumn{3}{l}{\emph{Opérateurs usuels}}\\
@@ -127,9 +132,10 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{Zmod\{n\}} &  \(\Zmod{n}\) & classe d’équivalence modulo \(n\) \\
   \texttt{Primes} & \(\Primes\) & ensemble des nombres premiers \\
   \texttt{divides} & \(\divides\) & relation de divisibilité \\
-  \texttt{congr\{a\}\{b\}\{n\}} & \(\congr{a}{b}{n}\) & \(a\) congru à \(b\) modulo \(n\)\\
+  \texttt{congru\{a\}\{b\}\{n\}} & \(\congru{a}{b}{n}\) & \(a\) congru à \(b\) modulo \(n\)\\
   \texttt{pgcd\{a\}\{b\}} & \(\pgcd{a}{b}\) & PGCD \(a\) et \(b\)\\
   \texttt{ppcm\{a\}\{b\}} & \(\ppcm{a}{b}\) & PPCM \(a\) et \(b\)\\
+  \texttt{indeuler} & \(\indeuler\) & fonction indicatrice d’Euler\\
   \bottomrule
 \end{longtable}
 

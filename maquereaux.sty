@@ -46,6 +46,7 @@
 % opérateurs génériques
 \newcommand\kro[2]{\delta_{#1,#2}} % symbole de Kronecker
 \newcommand\ind{\mathbb{1}} % fonction indicatrice
+\newcommand\inv[1]{#1^{-1}} % inverse
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (THÉORIE DES ENSEMBLES)
@@ -81,6 +82,7 @@
 
 \newcommand\K{\mathset{K}} % corps usuel, R ou C.
 \newcommand\F{\mathset{F}} % corps à p éléments
+\newcommand\U{\mathset{U}} % racines de l’unité
 
 % TODO: traduire ces commandes en anglais proprement
 \newcommand\EnsP[2]{\left\{#1\sa#2\right\}} % ensemble décrit par une propriété
@@ -208,8 +210,8 @@
 % (TOPOLOGIE)
 
 \newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
-\newcommand\adh[1]{\bar{#1}}                            % adhérence
-\newcommand\front[1]{\mathrm{Fr}(#1)}                   % frontière
+\newcommand\adh[1]{\overline{#1}}                            % adhérence
+\newcommand\front[1]{\partial #1}                   % frontière
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (PROBABILITÉS)
@@ -253,7 +255,9 @@
 
 \newcommand\divides{\,|\,} % divisibilité
 \newcommand\congru[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
-\newcommand\pgcd[2]{#1\vee #2}
-\newcommand\ppcm[2]{#1\wedge #2}
+\newcommand\pgcd[2]{#1\vee #2} % pgcd de deux entiers
+\newcommand\bigpgcd{\bigvee} % pgcd de plusieurs entiers
+\newcommand\ppcm[2]{#1\wedge #2} % ppcm de deux entiers
+\newcommand\bigppcm{\bigwedge} % ppcm de plusieurs entiers
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler

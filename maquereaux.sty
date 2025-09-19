@@ -38,10 +38,12 @@
 % ────────────────────────────────────────────────────────────────────────────────
 
 % constantes et symboles
-\renewcommand\d{\,\mathrm{d}}                              % différentielle
 \DeclareMathOperator{\e}{e} % nombre e
-\renewcommand\i{\mathrm{i}}
-\newcommand\gold{\varphi} % nombre d’or
+\renewcommand\i{\mathrm{i}} % i
+
+\newcommand\PI{\text{π}} % constante pi
+\newcommand\TAU{\text{τ}} % constante tau = 2 pi
+\newcommand\gold{\text{φ}} % nombre d’or
 
 % opérateurs génériques
 \newcommand\kro[2]{\delta_{#1,#2}} % symbole de Kronecker
@@ -52,6 +54,16 @@
 % (THÉORIE DES ENSEMBLES)
 % ────────────────────────────────────────────────────────────────────────────────
 
+% écriture d’ensembles
+
+\newcommand\sa{\,|\,} % such as = tel que
+
+% TODO: traduire ces commandes en anglais proprement
+\newcommand\Set[1]{\left\{#1\right\}} % ensemble
+\newcommand\SetP[2]{\Set{#1\sa#2}} % ensemble décrit par une propriété
+\newcommand\SetA[2]{\Set{#1~;~#2}} % ensemble décrit analytiquement
+
+% fonctions
 \newcommand\longto{\longrightarrow} % longue flèche
 
 \newcommand{\function}[5]{ % fonction
@@ -66,15 +78,6 @@
 
 \DeclareMathOperator{\nor}{\triangle} % différence symétrique
 
-% écriture d’ensembles
-
-\newcommand\sa{\,|\,} % such as = tel que
-
-% fonctions usuelles (autres opérateurs)
-\DeclareMathOperator\ch{ch} % cosinus hyperbolique
-\DeclareMathOperator\sh{sh} % sinus hyperbolique
-\DeclareMathOperator{\Log}{Log} % logarithme principal
-
 % ensembles de nombres
 
 \newcommand\N{\mathset{N}} % naturels
@@ -88,17 +91,19 @@
 \newcommand\F{\mathset{F}} % corps à p éléments
 \newcommand\U{\mathset{U}} % racines de l’unité
 
-% TODO: traduire ces commandes en anglais proprement
-\newcommand\EnsP[2]{\left\{#1\sa#2\right\}} % ensemble décrit par une propriété
-\newcommand\EnsA[2]{\left\{#1~;~#2\right\}} % ensemble décrit analytiquement
-
-\newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}}                    % Cardinal (notations usuelles : #, Card, |·|)
+% opérations ensemblistes
+% \newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}} % cardinal notation “card”
 % \newcommand\card[1]{\left\{#1\right\}}
+\newcommand\card[1]{\# #1} % cardinal (notation #)
 % \newcommand\card[1]{|#1|}
 \newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
 
 \newcommand\comp[1]{\bar{#1}}                    % complémentaire d'un ensemble
 
+% fonctions usuelles (autres opérateurs)
+\DeclareMathOperator\ch{ch} % cosinus hyperbolique
+\DeclareMathOperator\sh{sh} % sinus hyperbolique
+\DeclareMathOperator{\Log}{Log} % logarithme principal
 % ────────────────────────────────────────────────────────────────────────────────
 % (ALGÈBRE)
 % ────────────────────────────────────────────────────────────────────────────────
@@ -116,7 +121,7 @@
 \newcommand\eng[1]{\left\langle#1\right\rangle} % sous-groupe engendré par une partie
 \DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
 \newcommand\indice[2]{[#2:#1]} % indice d’un sous-groupe dans un groupe
-\newcommand\action[3]{#1\underset{#3}{\hookrightarrow} #2} % groupe opérant sur un ensemble
+\newcommand\action[3]{#1\underset{#3}{\looparrowright} #2} % groupe opérant sur un ensemble
 \newcommand\orbite[1]{\mathcal{O}_#1} % orbite d’un élément
 \newcommand\stab[1]{\barwedge_#1} % stabilisateur d’un élément
 
@@ -188,6 +193,7 @@
 % ────────────────────────────────────────────────────────────────────────────────
 % (CALCUL DIFFÉRENTIEL)
 
+\renewcommand\d{\,\mathrm{d}} % opérateur différentielle élémentaire
 \newcommand\diff[2]{\d #1_{#2}} % Différentielle (notation df_a)
 % \newcommand\diff[2]{\d #1(#2)} % Différentielle (notation df(a))
 % \newcommand\diff[2]{#1'(#2)} % Différentielle (notation f'(a))

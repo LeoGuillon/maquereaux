@@ -41,9 +41,9 @@
 \DeclareMathOperator{\e}{e} % nombre e
 \renewcommand\i{\mathrm{i}} % i
 
-\newcommand\PI{\text{π}} % constante pi
-\newcommand\TAU{\text{τ}} % constante tau = 2 pi
-\newcommand\gold{\text{φ}} % nombre d’or
+\newcommand\PI{\mathrm{π}} % constante pi
+\newcommand\TAU{\mathrm{τ}} % constante tau = 2 pi
+\newcommand\gold{\mathrm{φ}} % nombre d’or
 
 % opérateurs génériques
 \newcommand\kro[2]{\delta_{#1,#2}} % symbole de Kronecker
@@ -75,8 +75,7 @@
 
 \newcommand\inj{\hookrightarrow} % injection
 \newcommand\surj{\twoheadrightarrow} % surjection
-
-\DeclareMathOperator{\nor}{\triangle} % différence symétrique
+% \newcommand\bij{\widetilde{\to}} % bijection
 
 % ensembles de nombres
 
@@ -98,12 +97,12 @@
 % \newcommand\card[1]{|#1|}
 \newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
 
-\newcommand\comp[1]{\bar{#1}}                    % complémentaire d'un ensemble
+\newcommand\comp[1]{{}^{c}#1}                    % complémentaire d'un ensemble
+\DeclareMathOperator{\nor}{\triangle} % différence symétrique
 
 % fonctions usuelles (autres opérateurs)
 \DeclareMathOperator\ch{ch} % cosinus hyperbolique
 \DeclareMathOperator\sh{sh} % sinus hyperbolique
-\DeclareMathOperator{\Log}{Log} % logarithme principal
 % ────────────────────────────────────────────────────────────────────────────────
 % (ALGÈBRE)
 % ────────────────────────────────────────────────────────────────────────────────
@@ -216,6 +215,19 @@
 \newcommand\Class{\mathcal{C}} % Ensemble de fonctions continues ou de classe C…
 \newcommand\Lip{\mathcal{L}} % Ensemble des fonctions lipschitziennes
 
+% ──────────────────────────────────────────────────────────────────────────────
+% ANALYSE COMPLEXE
+
+\newcommand\conj[1]{\overline{#1}} % conjugué
+% \newcommand\mod[1]{\abs{#1}} % module
+% NOTE: pas sûr à 100% que ce soit nécessaire d’ajouter celui-là
+
+\DeclareMathOperator{\Arg}{Arg} % argument principal
+\DeclareMathOperator{\Log}{Log} % logarithme principal
+
+\newcommand\Anal{\mathcal{A}} % Ensemble des fonctions analytiques
+\newcommand\Holo{\mathcal{H}} % Ensemble des fonctions holomorphes
+
 % ────────────────────────────────────────────────────────────────────────────────
 % (TOPOLOGIE)
 
@@ -258,10 +270,9 @@
 \DeclareMathOperator{\GEV}{\mathrm{GEV}}                  % Loi GEV (Generalized Extreme Values)
 \DeclareMathOperator{\GPD}{\mathrm{GP}}                   % Loi GPD (Generalized Pareto Distribution)
 
+% ──────────────────────────────────────────────────────────────────────────────
 % ARITHMÉTIQUE
-
-\newcommand\Zmod[1]{\Z/#1\Z}                             % classes d'équivalence modulo n
-\newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
+% ──────────────────────────────────────────────────────────────────────────────
 
 \newcommand\divides{\,|\,} % divisibilité
 \newcommand\congru[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
@@ -269,5 +280,8 @@
 \newcommand\bigpgcd{\bigvee} % pgcd de plusieurs entiers
 \newcommand\ppcm[2]{#1\wedge #2} % ppcm de deux entiers
 \newcommand\bigppcm{\bigwedge} % ppcm de plusieurs entiers
+
+\newcommand\Zmod[1]{\Z/#1\Z}                             % classes d'équivalence modulo n
+\newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler

@@ -19,6 +19,8 @@ De manière générale, on essaie de suivre les conventions mathématiques : une
 
 Par ailleurs, pour être le plus consistant possible avec les autres commandes déjà existantes en \LaTeX, les commandes doivent être nommées en anglais, dans la mesure du possible et de la convenance.
 
+Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
+
 \section{Listes des commandes}
 \centering
 \begin{longtable}{lcl}
@@ -49,7 +51,7 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{function\{f\}\{A\}\{B\}\{x\}\{f(x)\}} & \(\function{f}{A}{B}{x}{f(x)}\) & définition de fonction \\
   \texttt{inj} & \(\inj\) & injection\\
   \texttt{surj} & \(\surj\) & surjection\\
-  \texttt{Log} & \(\Log\) & logarithme principal\\
+  % \texttt{bij} & \(\bij\) & bijection\\
   \multicolumn{3}{l}{\emph{Ensembles usuels}}\\
   \texttt{N} & \(\N\) & entiers naturels\\
   \texttt{Z} & \(\Z\) & entiers relatifs\\
@@ -57,12 +59,13 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{R} & \(\R\) & nombres réels\\
   \texttt{C} & \(\C\) & nombres complexes\\
   \texttt{H} & \(\H\) & quaternions\\
-  \texttt{K} & \(\K\) & corps usuel, \(R\) ou \(C\)\\
+  \texttt{K} & \(\K\) & corps usuel, \(\R\) ou \(\C\)\\
   \texttt{U} & \(\U\) & disque unité du plan complexe\\
   \multicolumn{3}{l}{\emph{Opérateurs ensemblistes}}\\
   \texttt{card\{E\}} & \(\card{E}\) & cardinal de l’ensemble \(E\)\\
   \texttt{parts\{E\}} & \(\parts{E}\) & ensemble des parties de l’ensemble \(E\)\\
   \texttt{comp\{E\}} & \(\comp{E}\) & complémentaire de l’ensemble \(E\)\\
+  \texttt{nor} & \(\nor\) & différence symétrique entre deux ensembles\\
   \midrule
   \multicolumn{3}{l}{\strong{Algèbre}}\\
   \multicolumn{3}{l}{\emph{Algèbre générale}}\\
@@ -103,6 +106,21 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{spradius} & \(\spradius\) & rayon spectral\\
   \midrule
   \multicolumn{3}{l}{\strong{Analyse}}\\
+  \multicolumn{3}{l}{\emph{Topologie}}\\
+  \texttt{interior\{A\}} & \(\interior{A}\) & intérieur de \(A\)\\
+  \texttt{adh\{A\}} & \(\adh{A}\) & adhérence de \(A\)\\
+  \texttt{front\{A\}} & \(\front{A}\) & frontière de \(A\)\\
+  \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
+  \texttt{norme\{x\}} & \(\norme{x}\) & norme de \(x\)\\
+  \texttt{triple\{u\}} & \(\triple{u}\) & norme triple de \(u\)\\
+  \texttt{Class} & \(\Class\) & ensemble de fonctions continues\\
+  \texttt{Lip} & \(\Lip\) & ensemble de fonctions lipschitziennes\\
+  \multicolumn{3}{l}{\emph{Analyse complexe}}\\
+  \texttt{conj\{z\}} & \(\conj{z}\) & conjugué du complexe \(z\)\\
+  \texttt{Arg} & \(\Arg\) & argument principal\\
+  \texttt{Log} & \(\Log\) & logarithme principal\\
+  \texttt{Anal} & \(\Anal\) & ensemble de fonctions analytiques\\
+  \texttt{Holo} & \(\Holo\) & ensemble de fonctions holomorphes\\
   \multicolumn{3}{l}{\emph{Calcul différentiel et intégral}}\\
   \texttt{d} & \(\d\) & opérateur différentiel élémentaire\\
   \texttt{diff\{f\}\{a\}} & \(\diff{f}{a}\) & différentielle de \(f\) en \(a\)\\
@@ -113,14 +131,6 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{jac} & \(\jac\) & matrice jacobienne\\
   \texttt{detjac\{f\}\{a\}} & \(\detjac{f}{a}\) & déterminant jacobien de \(f\) en \(a\)\\
   \texttt{hess\{f\}} & \(\hess{f}\) & matrice hessienne de \(f\) en \(a\)\\
-  \multicolumn{3}{l}{\emph{Topologie}}\\
-  \texttt{interior\{A\}} & \(\interior{A}\) & intérieur de \(A\)\\
-  \texttt{adh\{A\}} & \(\adh{A}\) & adhérence de \(A\)\\
-  \texttt{front\{A\}} & \(\front{A}\) & frontière de \(A\)\\
-  \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
-  \texttt{norme\{x\}} & \(\norme{x}\) & norme de \(x\)\\
-  \texttt{Class} & \(\Class\) & ensemble de fonctions continues\\
-  \texttt{Lip} & \(\Lip\) & ensemble de fonctions lipschitziennes\\
   \midrule
   \multicolumn{3}{l}{\strong{Probabilités}}\\
   \multicolumn{3}{l}{\emph{Opérateurs usuels}}\\

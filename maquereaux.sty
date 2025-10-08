@@ -40,7 +40,9 @@
 % constantes et symboles
 \DeclareMathOperator{\e}{e} % nombre e
 \renewcommand\i{\mathrm{i}} % i
+\renewcommand\j{\mathrm{j}} % j
 
+% TODO: renommer en \cpi pour «constante pi»
 \newcommand\PI{\mathrm{π}} % constante pi
 \newcommand\TAU{\mathrm{τ}} % constante tau = 2 pi
 \newcommand\gold{\mathrm{φ}} % nombre d’or
@@ -108,22 +110,27 @@
 
 % Algèbre générale
 
-\newcommand\ensS[1]{\mathfrak{#1}} % notation des ensembles de permutations : classiques ou mathfrak
-\newcommand\Sym{\ensS{S}} % groupe symétrique (permutations)
-\newcommand\Alt{\ensS{A}} % groupe alterné
-
 \DeclareMathOperator{\iso}{\cong} % relation d’isomorphismes
+
 \DeclareMathOperator{\subgroup}{<} % sous-groupe
 \DeclareMathOperator{\normal}{\vartriangleleft} % sous-groupe normal (ou distingué)
+\DeclareMathOperator{\normalright}{\vartriangleright} % sous-groupe normal (vers la droite)
 \newcommand\centre[1]{Z(#1)} % centre d’un groupe
 \newcommand\eng[1]{\left\langle#1\right\rangle} % sous-groupe engendré par une partie
 \DeclareMathOperator{\semiprod}{\rtimes} % produit semi-direct de groupes
 \newcommand\indice[2]{[#2:#1]} % indice d’un sous-groupe dans un groupe
-\newcommand\action[3]{#1\underset{#3}{\looparrowright} #2} % groupe opérant sur un ensemble
+
+\newcommand\action{\looparrowright} % action de groupe
 \newcommand\orbite[1]{\mathcal{O}_#1} % orbite d’un élément
-\newcommand\stab[1]{\barwedge_#1} % stabilisateur d’un élément
+\newcommand\stab[1]{\mathrm{Stab}(#1)} % stabilisateur d’un élément
+\newcommand\fix[1]{\mathrm{Fix}(#1)} % fixateur d’un élément
+
+% TODO: groupe dual ?
+% conflit avec la commande de dual pour un espace vectoriel
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
+
+\newcommand\ideng[1]{(#1)} % idéal engendré
 
 % ensembles de morphismes
 \newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
@@ -131,9 +138,14 @@
 \newcommand\End{\mathrm{End}}                             % l'ensemble des endomorphisme de groupe
 \newcommand\Aut{\mathrm{Aut}}                             % l'ensemble des automorphismes de groupe
 
-\DeclareMathOperator{\sign}{\varepsilon}                  % Signature d'une permutation
-
 \DeclareMathOperator{\Id}{Id} % application identité
+
+\newcommand\ensS[1]{\mathfrak{#1}} % notation des ensembles de permutations : classiques ou mathfrak
+\newcommand\Sym{\ensS{S}} % groupe symétrique (permutations)
+\newcommand\Alt{\ensS{A}} % groupe alterné
+\newcommand\sign{\varepsilon} % signature d’une permutation
+
+\newcommand\Diedral{\mathset{D}} % groupe diédral
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (ALGÈBRE LINÉAIRE)
@@ -143,6 +155,7 @@
 \newcommand\Lin{\mathcal{L}} % ensemble d’applications linéaires
 \newcommand\FLin[1]{\Lin{#1}{\R}} % ensemble des formes linéaires
 \newcommand\dual[1]{#1^*} % espace dual
+% TODO: renommer cette commande en vecdual ou spacedual
 
 \newcommand\Bil[2]{\mathcal{L}_2(#1, #2)} % ensemble des formes bilinéaires
 \newcommand\Quad{\mathcal{Q}} % ensemble des formes quadratiques
@@ -153,6 +166,8 @@
 \newcommand\SL{\mathrm{SL}} % groupe spécial linéaire (matrices de déterminant 1)
 \newcommand\Orth{\mathcal{O}} % groupe orthogonal (matrices dont l'inverse est la transposée)
 \newcommand\SO{\mathrm{SO}} % groupe spécial orthogonal (matrices orthogonales de déterminant 1)
+\newcommand\PGL{\mathrm{PGL}} % groupe linéaire projectif
+\newcommand\PSL{\mathrm{PSL}} % groupe spécial projectif
 
 \renewcommand\S{\mathcal{S}} % ensemble des matrices symétriques
 \newcommand\Diag{\mathrm{D}} % ensemble des matrices diagonales
@@ -160,8 +175,6 @@
 \newcommand\vect[1]{\mathbf{#1}} % écriture d'un vecteur
 \DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
 
-% BUG: \t conflict with the accent
-% \newcommand\trans[1]{#1^\top} % Transposée (version T après)
 \newcommand\T[1]{#1^\top} % Transposée (version T après)
 \newcommand\adj[1]{#1^*} % matrice adjointe (ou transconjuguée, ou adjoint hermitienne)
 
@@ -224,8 +237,12 @@
 \DeclareMathOperator{\Arg}{Arg} % argument principal
 \DeclareMathOperator{\Log}{Log} % logarithme principal
 
+\newcommand\Circunit{\mathset{U}} % cercle unité
+\newcommand\Diskunit{\mathset{D}} % disque unité
+
 \newcommand\Anal{\mathcal{A}} % Ensemble des fonctions analytiques
 \newcommand\Holo{\mathcal{H}} % Ensemble des fonctions holomorphes
+\newcommand\Mero{\mathcal{M}} % Ensemble des fonctions méromorphes
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (TOPOLOGIE)
@@ -275,12 +292,14 @@
 
 \newcommand\divides{\,|\,} % divisibilité
 \newcommand\congru[3]{#1 \equiv #2\,[#3]}                  % relation de congruence
-\newcommand\pgcd[2]{#1\vee #2} % pgcd de deux entiers
-\newcommand\bigpgcd{\bigvee} % pgcd de plusieurs entiers
-\newcommand\ppcm[2]{#1\wedge #2} % ppcm de deux entiers
-\newcommand\bigppcm{\bigwedge} % ppcm de plusieurs entiers
+\newcommand\pgcd[2]{#1\wedge #2} % pgcd de deux entiers
+\newcommand\bigpgcd{\bigwedge} % pgcd de plusieurs entiers
+\newcommand\ppcm[2]{#1\vee #2} % ppcm de deux entiers
+\newcommand\bigppcm{\bigvee} % ppcm de plusieurs entiers
 
 \newcommand\Zmod[1]{\Z/#1\Z}                             % classes d'équivalence modulo n
 \newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler
+
+% TODO: valuation p‑adique

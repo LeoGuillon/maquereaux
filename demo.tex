@@ -19,8 +19,6 @@ De manière générale, on essaie de suivre les conventions mathématiques : une
 
 Par ailleurs, pour être le plus consistant possible avec les autres commandes déjà existantes en \LaTeX, les commandes doivent être nommées en anglais, dans la mesure du possible et de la convenance.
 
-Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
-
 \section{Listes des commandes}
 \centering
 \begin{longtable}{lcl}
@@ -35,6 +33,7 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \multicolumn{3}{l}{\emph{Constantes mathématiques}}\\
   \texttt{e} & \(\e\) & constante exponentielle\\
   \texttt{i} & \(\i\) & nombre \(\i\)\\
+  \texttt{j} & \(\j\) & nombre \(\j:=\e^{\i \TAU/3}=-\frac{1}{2}+\i \frac{\sqrt{3}}{2}\)\\
   \texttt{PI} & \(\PI\) & constante du cercle\\
   \texttt{TAU} & \(\TAU\) & \emph{vraie} constante du cercle\\
   \texttt{gold} & \(\gold\) & nombre d’or\\
@@ -60,7 +59,6 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \texttt{C} & \(\C\) & nombres complexes\\
   \texttt{H} & \(\H\) & quaternions\\
   \texttt{K} & \(\K\) & corps usuel, \(\R\) ou \(\C\)\\
-  \texttt{U} & \(\U\) & disque unité du plan complexe\\
   \texttt{F} & \(\F\) & corps fini\\
   \multicolumn{3}{l}{\emph{Opérateurs ensemblistes}}\\
   \texttt{card\{E\}} & \(\card{E}\) & cardinal de l’ensemble \(E\)\\
@@ -70,8 +68,6 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \midrule
   \multicolumn{3}{l}{\strong{Algèbre}}\\
   \multicolumn{3}{l}{\emph{Algèbre générale}}\\
-  \texttt{Sym} & \(\Sym\) & groupe symétrique\\
-  \texttt{Alt} & \(\Alt\) & groupe alterné\\
   \texttt{iso} & \(\iso\) & relation d’isomorphisme\\
   \texttt{subgroup} & \(\subgroup\) & relation de sous-groupe\\
   \texttt{normal} & \(\normal\) & relation de sous-groupe normal\\
@@ -79,13 +75,19 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \texttt{eng\{A\}} & \(\eng{A}\) & sous-groupe engendré par \(A\)\\
   \texttt{semiprod} & \(\semiprod\) & produit semi-direct de groupes\\
   \texttt{indice\{H\}\{G\}} & \(\indice{H}{G}\) & indice de \(H\) dans \(G\)\\
-  \texttt{action\{G\}\{X\}\{\backslash varrho\}} & \(\action{G}{X}{\varrho}\) & groupe \(G\) opérant sur \(X\) par \(\varrho\)\\
+  \texttt{action} & \(\action\) & action de groupe\\
   \texttt{orbite\{x\}} & \(\orbite{x}\) & orbite de \(x\)\\
   \texttt{stab\{x\}} & \(\stab{x}\) & stabilisateur de \(x\)\\
+  \texttt{fix\{g\}} & \(\fix{g}\) & fixateur de \(g\)\\
+  \texttt{ideng\{a\}} & \(\ideng{a}\) & idéal engendré par \(a\)\\
   \texttt{Hom} & \(\Hom\) & (homo)morphismes de groupes \\
   \texttt{Iso} & \(\Iso\) & isomorphismes de groupes \\
   \texttt{End} & \(\End\) & endomorphismes de groupes \\
   \texttt{Aut} & \(\Aut\) & automorphismes de groupes \\
+  \texttt{Sym} & \(\Sym\) & groupe symétrique\\
+  \texttt{Alt} & \(\Alt\) & groupe alterné\\
+  \texttt{sign} & \(\sign\) & signature\\
+  \texttt{Diedral} & \(\Diedral\) & groupe diédral\\
   \multicolumn{3}{l}{\emph{Algèbre linéaire}}\\
   \texttt{Lin} & \(\Lin\) & ensemble d’applications linéaires\\
   \texttt{Quad} & \(\Quad\) & ensemble de formes quadratiques\\
@@ -95,6 +97,8 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \texttt{SL} & \(\SL\) & groupe spécial linéaire\\
   \texttt{Orth} & \(\Orth\) & groupe orthogonal\\
   \texttt{SO} & \(\SO\) & groupe spécial orthogonal\\
+  \texttt{PGL} & \(\PGL\) & groupe linéaire projectif\\
+  \texttt{PSL} & \(\PSL\) & groupe spécial projectif\\
   % \texttt{T\{A\}} & \(\T{A}\) & transposée de la matrice \(A\)\\
   \texttt{adj\{A\}} & \(\adj{A}\) & adjoint de la matrice \(A\)\\
   \texttt{tr} & \(\tr\) & trace\\
@@ -120,8 +124,11 @@ Test : \(\mathfrak{D}_n, \mathfrak{T}_n.\)
   \texttt{conj\{z\}} & \(\conj{z}\) & conjugué du complexe \(z\)\\
   \texttt{Arg} & \(\Arg\) & argument principal\\
   \texttt{Log} & \(\Log\) & logarithme principal\\
+  \texttt{Circunit} & \(\Circunit\) & cercle unité du plan complexe\\
+  \texttt{Diskunit} & \(\Diskunit\) & disque unité du plan complexe\\
   \texttt{Anal} & \(\Anal\) & ensemble de fonctions analytiques\\
   \texttt{Holo} & \(\Holo\) & ensemble de fonctions holomorphes\\
+  \texttt{Mero} & \(\Mero\) & ensemble de fonctions méromorphes\\
   \multicolumn{3}{l}{\emph{Calcul différentiel et intégral}}\\
   \texttt{d} & \(\d\) & opérateur différentiel élémentaire\\
   \texttt{diff\{f\}\{a\}} & \(\diff{f}{a}\) & différentielle de \(f\) en \(a\)\\

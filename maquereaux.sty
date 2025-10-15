@@ -68,6 +68,12 @@
 % fonctions
 \newcommand\longto{\longrightarrow} % longue flèche
 
+\newcommand{\app}[4]{ % fonction (sans la nommer)
+  \begin{array}{rcl}
+    #1 & \longto & #2 \\
+    #3 & \longmapsto     & #4
+  \end{array}
+}
 \newcommand{\function}[5]{ % fonction
   \begin{array}{rcl}
     #1 : #2 & \longto & #3 \\
@@ -101,6 +107,9 @@
 \newcommand\comp[1]{{}^{c}#1}                    % complémentaire d'un ensemble
 \DeclareMathOperator{\nor}{\triangle} % différence symétrique
 
+\newcommand\tribeng[1]{\sigma(#1)} % tribu engendrée par une classe
+\newcommand\borel{\mathcal{B}} % tribu borélienne
+
 % fonctions usuelles (autres opérateurs)
 \DeclareMathOperator\ch{ch} % cosinus hyperbolique
 \DeclareMathOperator\sh{sh} % sinus hyperbolique
@@ -125,8 +134,7 @@
 \newcommand\stab[1]{\mathrm{Stab}(#1)} % stabilisateur d’un élément
 \newcommand\fix[1]{\mathrm{Fix}(#1)} % fixateur d’un élément
 
-% TODO: groupe dual ?
-% conflit avec la commande de dual pour un espace vectoriel
+\newcommand\groupdual[1]{\hat{#1}} % dual d’un groupe
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
 
@@ -160,8 +168,6 @@
 \newcommand\Bil[2]{\mathcal{L}_2(#1, #2)} % ensemble des formes bilinéaires
 \newcommand\Quad{\mathcal{Q}} % ensemble des formes quadratiques
 
-\newcommand\M{\mathcal{M}} % l'ensemble des matrices
-
 \newcommand\GL{\mathrm{GL}} % groupe linéaire (matrices inversibles)
 \newcommand\SL{\mathrm{SL}} % groupe spécial linéaire (matrices de déterminant 1)
 \newcommand\Orth{\mathcal{O}} % groupe orthogonal (matrices dont l'inverse est la transposée)
@@ -169,11 +175,15 @@
 \newcommand\PGL{\mathrm{PGL}} % groupe linéaire projectif
 \newcommand\PSL{\mathrm{PSL}} % groupe spécial projectif
 
-\renewcommand\S{\mathcal{S}} % ensemble des matrices symétriques
+\newcommand\matrixset[1]{\mathcal{#1}} % calligraphie d’un ensemble de matrices
+\newcommand\M{\matrixset{M}} % l'ensemble des matrices
+\renewcommand\S{\matrixset{S}} % ensemble des matrices symétriques
 \newcommand\Diag{\mathrm{D}} % ensemble des matrices diagonales
 
 \newcommand\vect[1]{\mathbf{#1}} % écriture d'un vecteur
 \DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
+
+\newcommand\Base{\mathfrak{B}} % base
 
 \newcommand\T[1]{#1^\top} % Transposée (version T après)
 \newcommand\adj[1]{#1^*} % matrice adjointe (ou transconjuguée, ou adjoint hermitienne)
@@ -182,6 +192,8 @@
 \renewcommand\ker{\mathrm{Ker}}                         % Noyau
 \DeclareMathOperator{\im}{Im}                  % Image
 \DeclareMathOperator{\rg}{rg}                  % Rang
+
+\newcommand\orth[1]{#1^\perp} % orthogonal d’une partie
 
 \DeclareMathOperator{\codim}{codim}            % Codimension
 \DeclareMathOperator{\com}{com} % Comatrice
@@ -195,9 +207,9 @@
 % (ANALYSE)
 % ────────────────────────────────────────────────────────────────────────────────
 
-% \newcommand\abs[1]{\left| #1\right|} % Valeur absolue
-\DeclarePairedDelimiter\abs{\lvert}{\rvert} % valeur absolue
-\newcommand\norme[1]{\left\Vert #1\right\Vert}          % Norme
+\newcommand\abs[1]{\left| #1\right|} % Valeur absolue
+% \DeclarePairedDelimiter\abs{\lvert}{\rvert} % valeur absolue
+\newcommand\norme[1]{\left\Vert #1\right\Vert} % Norme
 \newcommand\triple[1]{\left|\left|\left|#1\right|\right|\right|} % norme triple
 \newcommand\ps[2]{\left\langle #1 ~|~ #2\right\rangle}  % Produit scalaire
 

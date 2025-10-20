@@ -65,6 +65,21 @@
 \newcommand\SetP[2]{\Set{#1\sa#2}} % ensemble décrit par une propriété
 \newcommand\SetA[2]{\Set{#1~;~#2}} % ensemble décrit analytiquement
 
+% opérations ensemblistes
+% \newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}} % cardinal notation “card”
+% \newcommand\card[1]{\left\{#1\right\}}
+\newcommand\card[1]{\# #1} % cardinal (notation #)
+% \newcommand\card[1]{|#1|}
+\newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
+
+\newcommand\comp[1]{{}^{c}#1}                    % complémentaire d'un ensemble
+\newcommand\inter{\cap} % intersection
+\newcommand\union{\cup} % union
+\DeclareMathOperator{\nor}{\triangle} % différence symétrique
+
+\newcommand\tribeng[1]{\sigma(#1)} % tribu engendrée par une classe
+\newcommand\borel{\mathcal{B}} % tribu borélienne
+
 % fonctions
 \newcommand\longto{\longrightarrow} % longue flèche
 
@@ -96,19 +111,6 @@
 \newcommand\K{\mathset{K}} % corps usuel, R ou C.
 \newcommand\F{\mathset{F}} % corps à p éléments
 \newcommand\U{\mathset{U}} % racines de l’unité
-
-% opérations ensemblistes
-% \newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}} % cardinal notation “card”
-% \newcommand\card[1]{\left\{#1\right\}}
-\newcommand\card[1]{\# #1} % cardinal (notation #)
-% \newcommand\card[1]{|#1|}
-\newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
-
-\newcommand\comp[1]{{}^{c}#1}                    % complémentaire d'un ensemble
-\DeclareMathOperator{\nor}{\triangle} % différence symétrique
-
-\newcommand\tribeng[1]{\sigma(#1)} % tribu engendrée par une classe
-\newcommand\borel{\mathcal{B}} % tribu borélienne
 
 % fonctions usuelles (autres opérateurs)
 \DeclareMathOperator\ch{ch} % cosinus hyperbolique

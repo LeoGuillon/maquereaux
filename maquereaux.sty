@@ -73,8 +73,10 @@
 \newcommand\parts[1]{\mathcal{P}\pairedbrackets{#1}}      % parties de E
 
 \newcommand\comp[1]{{}^{c}#1}                    % complémentaire d'un ensemble
-\newcommand\inter{\cap} % intersection
 \newcommand\union{\cup} % union
+\newcommand\bigunion{\bigcup} % (grosse) union
+\newcommand\inter{\cap} % intersection
+\newcommand\biginter{\bigcap} % (grosse) intersection
 \DeclareMathOperator{\nor}{\triangle} % différence symétrique
 
 \newcommand\tribeng[1]{\sigma(#1)} % tribu engendrée par une classe
@@ -196,6 +198,7 @@
 \DeclareMathOperator{\rg}{rg}                  % Rang
 
 \newcommand\orth[1]{#1^\perp} % orthogonal d’une partie
+\newcommand\oorth[1]{#1^\circ} % orthogonal d’une partie du dual
 
 \DeclareMathOperator{\codim}{codim}            % Codimension
 \DeclareMathOperator{\com}{com} % Comatrice
@@ -214,6 +217,13 @@
 \newcommand\norme[1]{\left\Vert #1\right\Vert} % Norme
 \newcommand\triple[1]{\left|\left|\left|#1\right|\right|\right|} % norme triple
 \newcommand\ps[2]{\left\langle #1 ~|~ #2\right\rangle}  % Produit scalaire
+
+% ────────────────────────────────────────────────────────────────────────────────
+% (TOPOLOGIE)
+
+\newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
+\newcommand\adh[1]{\overline{#1}}                            % adhérence
+\newcommand\front[1]{\partial #1}                   % frontière
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (CALCUL DIFFÉRENTIEL)
@@ -258,12 +268,12 @@
 \newcommand\Holo{\mathcal{H}} % Ensemble des fonctions holomorphes
 \newcommand\Mero{\mathcal{M}} % Ensemble des fonctions méromorphes
 
-% ────────────────────────────────────────────────────────────────────────────────
-% (TOPOLOGIE)
+% ──────────────────────────────────────────────────────────────────────────────
+% ANALYSE FONCTIONNELLE
 
-\newcommand\interior[1]{\mathring{#1}}                       % intérieur (\int est déjà pris pour l’intégrale)
-\newcommand\adh[1]{\overline{#1}}                            % adhérence
-\newcommand\front[1]{\partial #1}                   % frontière
+\renewcommand\L{\mathrm{L}} % espace L^p
+\renewcommand\l{\ell} % espace l^p
+\newcommand\Sobolev{W} % espace de Sobolev
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (PROBABILITÉS)
@@ -316,4 +326,6 @@
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler
 
-% TODO: valuation p‑adique
+% TODO: valuation p‑adique ?
+
+\newcommand\legendre[2]{\left(\frac{#1}{#2}\right)} % symbole de Legendre

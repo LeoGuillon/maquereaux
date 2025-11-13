@@ -274,7 +274,7 @@
 % ──────────────────────────────────────────────────────────────────────────────
 % ANALYSE FONCTIONNELLE
 
-\renewcommand\L{\mathrm{L}} % espace L^p
+\renewcommand\L{L} % espace L^p
 \renewcommand\l{\ell} % espace l^p
 \newcommand\Sobolev{W} % espace de Sobolev
 
@@ -291,6 +291,17 @@
 \newcommand\Prob[1]{\mathbb{P}\pairedbrackets*{#1}}                 % Probabilité
 % \newcommand\Prob[1]{\mathrm{P}\left(#1\right)}                 % Probabilité (variante, P simple droit)
 % \newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
+
+\newcommand\tops{\overset{\text{p.s.}}{\to}} % convergence presque sûre
+\newcommand\toprob{\overset{\mathbb{P}}{\to}} % convergence en probabilité
+\newcommand\tolaw{\overset{\mathcal{L}}{\to}} % convergence en loi
+\newcommand\toL[1]{\overset{\L^{#1}}{\to}} % convergence dans L^p
+
+\newcommand\longtops{\overset{\text{p.s.}}{\longto}} % convergence presque sûre
+\newcommand\longtoprob{\overset{\mathbb{P}}{\longto}} % convergence en probabilité
+\newcommand\longtolaw{\overset{\mathcal{L}}{\longto}} % convergence en loi
+\newcommand\longtoL[1]{\overset{\L^{#1}}{\longto}} % convergence dans L^p
+
 \newcommand\Esp[1]{\mathbb{E}\pairedrectangular*{#1}} % espérance
 % \newcommand\Var[1]{\mathrm{Var}\left(#1\right)}                  % Variance
 \newcommand\Var[1]{\mathrm{Var}\pairedbrackets*{#1}}                  % Variance

@@ -40,7 +40,8 @@
 % constantes et symboles
 \DeclareMathOperator{\e}{e} % nombre e
 \renewcommand\i{\mathrm{i}} % i
-\renewcommand\j{\mathrm{j}} % j
+\renewcommand\j{\mathrm{j}} % j (complexe ou quaternion)
+\renewcommand\k{\mathrm{k}} % k
 
 % TODO: renommer en \cpi pour «constante pi»
 \newcommand\PI{\mathrm{π}} % constante pi
@@ -113,12 +114,14 @@
 \renewcommand\H{\mathset{H}} % quaternions
 
 \newcommand\K{\mathset{K}} % corps usuel, R ou C.
-\newcommand\F{\mathset{F}} % corps à p éléments
+\newcommand\F{\mathset{F}} % corps fini
+\newcommand\Algebriques{\mathset{A}} % nombres algébriques
 \newcommand\U{\mathset{U}} % racines de l’unité
 
 % fonctions usuelles (autres opérateurs)
 \DeclareMathOperator\ch{ch} % cosinus hyperbolique
 \DeclareMathOperator\sh{sh} % sinus hyperbolique
+\DeclareMathOperator\sinc{sinc} % sinus cardinal
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (ALGÈBRE)
@@ -144,8 +147,10 @@
 \newcommand\groupdual[1]{\hat{#1}} % dual d’un groupe
 
 \newcommand\inversibles[1]{#1^\times} % ensemble des inversibles d’un anneau
-
 \newcommand\ideng[1]{(#1)} % idéal engendré
+\newcommand\car{\mathrm{car}} % caractéristique d’un anneau
+\newcommand\Frac{\mathrm{Frac}} % corps des fractions
+\newcommand\disc{\mathrm{disc}} % discriminant d’un polynôme
 
 % ensembles de morphismes
 \newcommand\Hom{\mathrm{Hom}}                             % l'ensemble des (homo)morphismes de groupes
@@ -161,6 +166,14 @@
 \newcommand\sign{\varepsilon} % signature d’une permutation
 
 \newcommand\Diedral{\mathset{D}} % groupe diédral
+\newcommand\Syl{\mathrm{Syl}} % ensemble des sous-groupes de Sylow
+
+\newcommand\cyclo{\Phi} % Polynôme cyclotomique
+
+% ──────────────────────────────────────────────────────────────────────────────
+% (THÉORIE DE GALOIS)
+
+\DeclareMathOperator{\Gal}{\mathrm{Gal}} % groupe de Galois
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (ALGÈBRE LINÉAIRE)
@@ -168,7 +181,6 @@
 \DeclareMathOperator{\Vect}{Vect} % ensemble engendré par une famille de vecteurs
 
 \newcommand\Lin{\mathcal{L}} % ensemble d’applications linéaires
-\newcommand\FLin[1]{\Lin{#1}{\R}} % ensemble des formes linéaires
 \newcommand\dual[1]{#1^*} % espace dual
 % TODO: renommer cette commande en vecdual ou spacedual
 
@@ -189,6 +201,7 @@
 
 \newcommand\vect[1]{\mathbf{#1}} % écriture d'un vecteur
 \DeclareMathOperator{\Mat}{Mat} % matrice d’une application linéaire
+\DeclareMathOperator{\diag}{diag} % matrice diagonale
 
 \newcommand\Base{\mathfrak{B}} % base
 
@@ -200,7 +213,7 @@
 \DeclareMathOperator{\im}{Im}                  % Image
 \DeclareMathOperator{\rg}{rg}                  % Rang
 
-\newcommand\orth[1]{#1^\perp} % orthogonal d’une partie
+\newcommand\orth[1]{{#1}^\perp} % orthogonal d’une partie
 \newcommand\oorth[1]{#1^\circ} % orthogonal d’une partie du dual
 
 \DeclareMathOperator{\codim}{codim}            % Codimension
@@ -215,11 +228,10 @@
 % (ANALYSE)
 % ────────────────────────────────────────────────────────────────────────────────
 
-\newcommand\abs[1]{\left| #1\right|} % Valeur absolue
-% \DeclarePairedDelimiter\abs{\lvert}{\rvert} % valeur absolue
 \newcommand\norme[1]{\left\Vert #1\right\Vert} % Norme
 \newcommand\triple[1]{\left|\left|\left|#1\right|\right|\right|} % norme triple
 \newcommand\ps[2]{\left\langle #1 ~|~ #2\right\rangle}  % Produit scalaire
+\newcommand\dualtopo[1]{#1'} % dual topologique
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (TOPOLOGIE)
@@ -237,8 +249,8 @@
 % \newcommand\diff[2]{#1'(#2)} % Différentielle (notation f'(a))
 
 \newcommand\deriv[2]{\frac{\d #1}{\d #2}}               % Derivee
-% \newcommand\dpar[2]{\frac{\partial #1}{\partial #2}}    % Derivee partielle
-\newcommand\dpar[2]{\partial_{#2} #1}    % Derivee partielle
+\newcommand\dpar[2]{\frac{\partial #1}{\partial #2}}    % Derivee partielle
+% \newcommand\dpar[2]{\partial_{#2} #1}    % Derivee partielle
 \newcommand\dnpar[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}   % nième derivee partielle
 
 \newcommand\grad{\nabla}            % gradient (version avec nabla)
@@ -257,9 +269,10 @@
 % ──────────────────────────────────────────────────────────────────────────────
 % ANALYSE COMPLEXE
 
+\newcommand\abs[1]{\left| #1\right|} % Valeur absolue
+\newcommand\floor[1]{\left\lfloor #1\right\rfloor} % partie entière
+\newcommand\ceil[1]{\left\lceil #1\right\rceil} % partie entière supérieure
 \newcommand\conj[1]{\overline{#1}} % conjugué
-% \newcommand\mod[1]{\abs{#1}} % module
-% NOTE: pas sûr à 100% que ce soit nécessaire d’ajouter celui-là
 
 \DeclareMathOperator{\Arg}{Arg} % argument principal
 \DeclareMathOperator{\Log}{Log} % logarithme principal
@@ -272,11 +285,21 @@
 \newcommand\Mero{\mathcal{M}} % Ensemble des fonctions méromorphes
 
 % ──────────────────────────────────────────────────────────────────────────────
-% ANALYSE FONCTIONNELLE
+% THÉORIE DE LA MESURE
+
+\DeclareMathOperator{\lebesgue}{\lambda} % mesure de Lebesgue
 
 \renewcommand\L{L} % espace L^p
 \renewcommand\l{\ell} % espace l^p
 \newcommand\Sobolev{W} % espace de Sobolev
+
+% ──────────────────────────────────────────────────────────────────────────────
+% ANALYSE HARMONIQUE
+
+\newcommand\Torus{\mathset{T}} % tore
+\newcommand\fourier[1]{\widehat{#1}} % transformée de Fourier (avec un chapeau)
+\newcommand\Fourier{\mathcal{F}} % opérateur de Fourier (L¹)
+\newcommand\Plancherel{\tilde{\Fourier}} % opérateur de Plancherel (L²)
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (PROBABILITÉS)
@@ -288,6 +311,7 @@
 % une «auto», avec des délimiteurs de taille variable, utile en displaystyle
 
 % \newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
+% \DeclareMathOperator{\P}{\mathbb{P}} % symbole d’une mesure de probabilité
 \newcommand\Prob[1]{\mathbb{P}\pairedbrackets*{#1}}                 % Probabilité
 % \newcommand\Prob[1]{\mathrm{P}\left(#1\right)}                 % Probabilité (variante, P simple droit)
 % \newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
@@ -339,7 +363,17 @@
 \newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler
+\newcommand\mobius{\mu} % fonction de Mobius
 
 % TODO: valuation p‑adique ?
 
 \newcommand\legendre[2]{\left(\frac{#1}{#2}\right)} % symbole de Legendre
+
+% ──────────────────────────────────────────────────────────────────────────────
+% GÉOMÉTRIE
+% ──────────────────────────────────────────────────────────────────────────────
+
+\DeclareMathOperator{\Aff}{\mathrm{Aff}} % ensemble des applications affines
+\DeclareMathOperator{\GA}{\mathrm{GA}} % groupe affine
+
+\DeclareMathOperator{\Is}{\mathrm{Is}} % groupe d’isométries

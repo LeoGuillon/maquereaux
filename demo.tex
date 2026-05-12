@@ -34,6 +34,7 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{e} & \(\e\) & constante exponentielle\\
   \texttt{i} & \(\i\) & nombre \(\i\)\\
   \texttt{j} & \(\j\) & nombre \(\j:=\e^{\i \TAU/3}=-\frac{1}{2}+\i \frac{\sqrt{3}}{2}\)\\
+  \texttt{k} & \(\k\) & quaternion \(\k\)\\
   \texttt{PI} & \(\PI\) & constante du cercle\\
   \texttt{TAU} & \(\TAU\) & \emph{vraie} constante du cercle\\
   \texttt{gold} & \(\gold\) & nombre d’or\\
@@ -52,7 +53,9 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{parts\{E\}} & \(\parts{E}\) & ensemble des parties de l’ensemble \(E\)\\
   \texttt{comp\{E\}} & \(\comp{E}\) & complémentaire de l’ensemble \(E\)\\
   \texttt{inter} & \(\inter\) & intersection\\
+  \texttt{biginter} & \(\biginter\) & intersection (grande version)\\
   \texttt{union} & \(\union\) & union\\
+  \texttt{bigunion} & \(\bigunion\) & union (grande version)\\
   \texttt{nor} & \(\nor\) & différence symétrique entre deux ensembles\\
   \texttt{tribeng\{C\}} & \(\tribeng{\mathcal{C}}\) & tribu engendrée par une classe \(\mathcal{C}\)\\
   \texttt{borel} & \(\borel\) & tribu borélienne\\
@@ -66,11 +69,16 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{N} & \(\N\) & entiers naturels\\
   \texttt{Z} & \(\Z\) & entiers relatifs\\
   \texttt{Q} & \(\Q\) & nombres rationnels\\
+  \texttt{Algebriques} & \(\Algebriques\) & nombres algébriques\\
   \texttt{R} & \(\R\) & nombres réels\\
   \texttt{C} & \(\C\) & nombres complexes\\
   \texttt{H} & \(\H\) & quaternions\\
   \texttt{K} & \(\K\) & corps usuel de nombres, \(\R\) ou \(\C\)\\
   \texttt{F} & \(\F\) & corps fini\\
+  \multicolumn{3}{l}{\emph{Fonctions usuelles}}\\
+  \texttt{ch} & \(\ch\) & cosinus hyperbolique\\
+  \texttt{sh} & \(\sh\) & sinus hyperbolique\\
+  \texttt{sinc} & \(\sinc\) & sinus cardinal\\
   \midrule
   \multicolumn{3}{l}{\strong{Algèbre}}\\
   \multicolumn{3}{l}{\emph{Algèbre générale}}\\
@@ -87,6 +95,9 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{fix\{g\}} & \(\fix{g}\) & fixateur de \(g\)\\
   \texttt{groupdual\{G\}} & \(\groupdual{G}\) & groupe dual de \(G\)\\
   \texttt{ideng\{a\}} & \(\ideng{a}\) & idéal engendré par \(a\)\\
+  \texttt{car} & \(\car\) & caractéristique d’un anneau ou d’un corps\\
+  \texttt{Frac} & \(\Frac\) & corps des fractions\\
+  \texttt{disc} & \(\disc\) & discriminant\\
   \texttt{Hom} & \(\Hom\) & (homo)morphismes de groupes \\
   \texttt{Iso} & \(\Iso\) & isomorphismes de groupes \\
   \texttt{End} & \(\End\) & endomorphismes de groupes \\
@@ -95,6 +106,10 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{Alt} & \(\Alt\) & groupe alterné\\
   \texttt{sign} & \(\sign\) & signature\\
   \texttt{Diedral} & \(\Diedral\) & groupe diédral\\
+  \texttt{Syl} & \(\Syl\) & sous-groupes de Sylow\\
+  \texttt{cyclo} & \(\cyclo\) & polynôme cyclotomique\\
+  \multicolumn{3}{l}{\emph{Théorie de Galois}}\\
+  \texttt{Gal} & \(\Gal\) & groupe de Galois\\
   \multicolumn{3}{l}{\emph{Algèbre linéaire}}\\
   \texttt{Lin} & \(\Lin\) & ensemble d’applications linéaires\\
   \texttt{Quad} & \(\Quad\) & ensemble de formes quadratiques\\
@@ -107,6 +122,8 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{PSL} & \(\PSL\) & groupe spécial projectif\\
   \texttt{M} & \(\M\) & ensemble de matrices\\
   \texttt{S} & \(\S\) & ensemble de matrices symétriques\\
+  \texttt{Mat} & \(\Mat\) & matrice d’une application linéaire\\
+  \texttt{diag} & \(\diag\) & matrice diagonale\\
   % \texttt{T\{A\}} & \(\T{A}\) & transposée de la matrice \(A\)\\
   \texttt{adj\{A\}} & \(\adj{A}\) & adjoint de la matrice \(A\)\\
   \texttt{tr} & \(\tr\) & trace\\
@@ -125,12 +142,14 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{interior\{A\}} & \(\interior{A}\) & intérieur de \(A\)\\
   \texttt{adh\{A\}} & \(\adh{A}\) & adhérence de \(A\)\\
   \texttt{front\{A\}} & \(\front{A}\) & frontière de \(A\)\\
-  \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
   \texttt{norme\{x\}} & \(\norme{x}\) & norme de \(x\)\\
   \texttt{triple\{u\}} & \(\triple{u}\) & norme triple de \(u\)\\
+  \texttt{dualtopo\{E\}} & \(\dualtopo{E}\) & dual topologique de \(E\)\\
   \texttt{Class} & \(\Class\) & ensemble de fonctions continues\\
   \texttt{Lip} & \(\Lip\) & ensemble de fonctions lipschitziennes\\
-  \multicolumn{3}{l}{\emph{Analyse complexe}}\\
+  \multicolumn{3}{l}{\emph{Analyse réelle et complexe}}\\
+  \texttt{abs\{x\}} & \(\abs{x}\) & valeur absolue (ou module) de \(x\)\\
+  \texttt{floor\{x\}} & \(\floor{x}\) & partie entière du réel \(x\)\\
   \texttt{conj\{z\}} & \(\conj{z}\) & conjugué du complexe \(z\)\\
   \texttt{Arg} & \(\Arg\) & argument principal\\
   \texttt{Log} & \(\Log\) & logarithme principal\\
@@ -139,10 +158,11 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{Anal} & \(\Anal\) & ensemble de fonctions analytiques\\
   \texttt{Holo} & \(\Holo\) & ensemble de fonctions holomorphes\\
   \texttt{Mero} & \(\Mero\) & ensemble de fonctions méromorphes\\
-  \multicolumn{3}{l}{\emph{Analyse fonctionnelle}}\\
+  \multicolumn{3}{l}{\emph{Théorie de la mesure}}\\
+  \texttt{lebesgue} & \(\lebesgue\) & mesure de Lebesgue\\
   \texttt{L} & \(\L\) & espace \(\L^p\)\\
   \texttt{l} & \(\l\) & espace \(\l^p\)\\
-  \multicolumn{3}{l}{\emph{Calcul différentiel et intégral}}\\
+  \multicolumn{3}{l}{\emph{Calcul différentiel}}\\
   \texttt{d} & \(\d\) & opérateur différentiel élémentaire\\
   \texttt{diff\{f\}\{a\}} & \(\diff{f}{a}\) & différentielle de \(f\) en \(a\)\\
   \texttt{grad} & \(\grad\) & gradient\\
@@ -152,6 +172,11 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{jac} & \(\jac\) & matrice jacobienne\\
   \texttt{detjac\{f\}\{a\}} & \(\detjac{f}{a}\) & déterminant jacobien de \(f\) en \(a\)\\
   \texttt{hess\{f\}} & \(\hess{f}\) & matrice hessienne de \(f\) en \(a\)\\
+  \multicolumn{3}{l}{\emph{Analyse harmonique}}\\
+  \texttt{Torus} & \(\Torus\) & tore\\
+  \texttt{fourier\{f\}} & \(\fourier{f}\) & transformée de Fourier de \(f\)\\
+  \texttt{Fourier} & \(\Fourier\) & opérateur de Fourier (dans \(\L^1\))\\
+  \texttt{Plancherel} & \(\Plancherel\) & opérateur de (Fourier-)Plancherel (dans \(\L^2\))\\
   \midrule
   \multicolumn{3}{l}{\strong{Probabilités}}\\
   \multicolumn{3}{l}{\emph{Opérateurs usuels}}\\
@@ -182,7 +207,15 @@ Par ailleurs, pour être le plus consistant possible avec les autres commandes d
   \texttt{pgcd\{a\}\{b\}} & \(\pgcd{a}{b}\) & PGCD \(a\) et \(b\)\\
   \texttt{ppcm\{a\}\{b\}} & \(\ppcm{a}{b}\) & PPCM \(a\) et \(b\)\\
   \texttt{indeuler} & \(\indeuler\) & fonction indicatrice d’Euler\\
+  \texttt{mobius} & \(\mobius\) & fonction de Möbius\\
   \texttt{legendre\{a\}\{q\}} & \(\legendre{a}{q}\) & symbole de legendre entre \(a\) et \(q\)\\
+  \midrule
+  \multicolumn{3}{l}{\strong{Géométrie}}\\
+  \multicolumn{3}{l}{\emph{Géométrie affine}}\\
+  \texttt{Aff} & \(\Aff\) & ensemble d’applications affines\\
+  \texttt{GA} & \(\GA\) & groupe affine\\
+  \multicolumn{3}{l}{\emph{Géométrie euclidienne}}\\
+  \texttt{Is} & \(\Is\) & groupe d’isométries\\
   \bottomrule
 \end{longtable}
 

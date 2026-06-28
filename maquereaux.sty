@@ -30,8 +30,8 @@
 % ────────────────────────────────────────────────────────────────────────────────
 
 \newcommand\mathbi[1]{\textbf{\em #1}} % math bold + italic
-\newcommand\mathset[1]{\mathbb{#1}} % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
-% \newcommand\mathset[1]{\mathbf{#1}}
+% \newcommand\mathset[1]{\mathbb{#1}} % notation des ensembles de nombres : mathbb ou mathbf en général, mais d'autres variations possibles
+\newcommand\mathset[1]{\mathbf{#1}}
 
 % ────────────────────────────────────────────────────────────────────────────────
 % (GÉNÉRIQUE)
@@ -47,6 +47,7 @@
 \newcommand\PI{\mathrm{π}} % constante pi
 \newcommand\TAU{\mathrm{τ}} % constante tau = 2 pi
 \newcommand\gold{\mathrm{φ}} % nombre d’or
+\newcommand\eulermasch{\mathrm{γ}} % constante d’Euler-Mascheroni
 
 % opérateurs génériques
 \newcommand\equalsdef{:=} % égal par définition
@@ -66,7 +67,7 @@
 % TODO: traduire ces commandes en anglais proprement
 \newcommand\Set[1]{\left\{#1\right\}} % ensemble
 \newcommand\SetP[2]{\Set{#1\sa#2}} % ensemble décrit par une propriété
-\newcommand\SetA[2]{\Set{#1~;~#2}} % ensemble décrit analytiquement
+\newcommand\SetA[2]{\Set{#1:#2}} % ensemble décrit analytiquement
 
 % opérations ensemblistes
 % \newcommand\card[1]{\mathrm{Card}\pairedcurly{#1}} % cardinal notation “card”
@@ -255,7 +256,7 @@
 
 \newcommand\grad{\nabla}            % gradient (version avec nabla)
 % \newcommand\grad{\overrightarrow{\mathrm{grad}}} % gradient (version avec grad fléché)
-% \renewcommand\div{\mathrm{div}} % divergence
+\renewcommand\div{\mathrm{div}} % divergence
 \newcommand\rot{\overrightarrow{\mathrm{rot}}} % rotationnel
 \newcommand\lap{\Delta} % laplacien
 
@@ -287,7 +288,7 @@
 % ──────────────────────────────────────────────────────────────────────────────
 % THÉORIE DE LA MESURE
 
-\DeclareMathOperator{\lebesgue}{\lambda} % mesure de Lebesgue
+\DeclareMathOperator{\lebesgue}{\mathrm{λ}} % mesure de Lebesgue
 
 \renewcommand\L{L} % espace L^p
 \renewcommand\l{\ell} % espace l^p
@@ -312,12 +313,12 @@
 
 % \newcommand\Prob[1]{\mathbb{P}\left(#1\right)}                 % Probabilité
 % \DeclareMathOperator{\P}{\mathbb{P}} % symbole d’une mesure de probabilité
-\newcommand\Prob[1]{\mathbb{P}\pairedbrackets*{#1}}                 % Probabilité
+\newcommand\Prob[1]{\mathset{P}\pairedbrackets*{#1}}                 % Probabilité
 % \newcommand\Prob[1]{\mathrm{P}\left(#1\right)}                 % Probabilité (variante, P simple droit)
 % \newcommand\Esp[1]{\mathbb{E}\left[#1\right]}                  % Espérance
 
 \newcommand\tops{\overset{\text{p.s.}}{\to}} % convergence presque sûre
-\newcommand\toprob{\overset{\mathbb{P}}{\to}} % convergence en probabilité
+\newcommand\toprob{\overset{\mathset{P}}{\to}} % convergence en probabilité
 \newcommand\tolaw{\overset{\mathcal{L}}{\to}} % convergence en loi
 \newcommand\toL[1]{\overset{\L^{#1}}{\to}} % convergence dans L^p
 
@@ -326,12 +327,15 @@
 \newcommand\longtolaw{\overset{\mathcal{L}}{\longto}} % convergence en loi
 \newcommand\longtoL[1]{\overset{\L^{#1}}{\longto}} % convergence dans L^p
 
-\newcommand\Esp[1]{\mathbb{E}\pairedrectangular*{#1}} % espérance
+\newcommand\Esp[1]{\mathset{E}\pairedrectangular*{#1}} % espérance
 % \newcommand\Var[1]{\mathrm{Var}\left(#1\right)}                  % Variance
 \newcommand\Var[1]{\mathrm{Var}\pairedbrackets*{#1}}                  % Variance
 \newcommand\sd[1]{\sigma\pairedbrackets*{#1}}                  % Écart-type (standard deviation)
 % TODO: décider si macro sous la forme \Cov{}{}
 \DeclareMathOperator{\Cov}{Cov}                  % Covariance
+
+\newcommand\carac{\phi} % fonction caractéristique
+\newcommand\gener{G} % fonction génératrice
 
 % lois discrètes
 \newcommand\Bernoulli[1]{\mathcal{B}(#1)}                 % Loi de Bernoulli
@@ -360,7 +364,7 @@
 \newcommand\bigppcm{\bigvee} % ppcm de plusieurs entiers
 
 \newcommand\Zmod[1]{\Z/#1\Z}                             % classes d'équivalence modulo n
-\newcommand\Primes{\mathcal{P}}                           % ensemble des nombres premiers
+\newcommand\Primes{\mathfrak{P}}                           % ensemble des nombres premiers
 
 \newcommand\indeuler{\varphi} % fonction indicatrice d’Euler
 \newcommand\mobius{\mu} % fonction de Mobius
